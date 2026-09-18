@@ -50,19 +50,15 @@ metrics:
     - value: 19
       label: Chapters
       desc: from a first page to your own project
-      icon: fa-solid fa-book
     - value: 33
       label: Learning topics
       desc: practised or explained along the way
-      icon: fa-solid fa-list-check
-    - value: 1
-      label: Website
-      desc: grows from chapter to chapter
-      icon: fa-solid fa-globe
+    - value: 4
+      label: Learning paths
+      desc: from beginner to site maintainer
     - value: 0
       label: Prior experience assumed
       desc: no programming, Git, or terminal
-      icon: fa-solid fa-seedling
 
 steps:
   title: How every chapter works
