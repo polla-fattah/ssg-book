@@ -2,6 +2,13 @@
 #
 # cSpell:ignore docsy fortawesome fontawesome github permalinkable twbs webfonts
 
+# Site settings for the book. This repository publishes the book with the
+# theme it contains, so it is a site as well as a module. baseURL is left
+# unset: `hugo server` previews at the root, and the Pages workflow passes the
+# published address with --baseURL.
+title: Static Site Generators in the Age of AI
+locale: en
+
 params:
   # Highlight code with Chroma class names so it follows the theme's light/dark
   # palettes. Hugo ignores `markup` set by a theme, so the theme applies this

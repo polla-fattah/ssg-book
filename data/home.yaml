@@ -1,0 +1,24 @@
+# The home page. OINK renders the sections listed under `sections`, in order,
+# from the blocks below; the Markdown body of content/_index.md is not shown
+# on the home page. See tests/site/data/home/en.yaml for every section type.
+sections:
+  - hero
+
+hero:
+  eyebrow: Building and Maintaining Content with AI Agents
+  title: Static Site Generators in the Age of AI
+  desc: >
+    One small website, built from its first Markdown page through publication,
+    review, and long-term maintenance, with an AI agent helping and a person
+    deciding what goes live. No prior HTML, Git, or command-line experience
+    is assumed.
+  note: A working draft. Each chapter opens with a note recording how far it has been tested.
+  actions:
+    - label: "Start reading: Chapter 1"
+      url: book/chapter_01_your_first_hugo_website/
+      icon: fa-solid fa-book-open
+      style: primary
+    - label: Table of contents
+      url: book/
+      icon: fa-solid fa-list
+      style: ghost
