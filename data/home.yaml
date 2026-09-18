@@ -1,8 +1,24 @@
 # The home page. OINK renders the sections listed under `sections`, in order,
-# from the blocks below; the Markdown body of content/_index.md is not shown
-# on the home page. See tests/site/data/home/en.yaml for every section type.
+# from the blocks below; the Markdown body of content/_index.md is not shown on
+# the home page. tests/site/data/home/en.yaml shows every section type.
+#
+# Every figure and claim here is checkable against the book. The demo site's
+# testimonials, contributors, and showcase blocks are deliberately absent:
+# there is no real data for them yet.
 sections:
   - hero
+  - metrics
+  - steps
+  - type: cards
+    key: paths
+  - timeline
+  - type: logo-wall
+    key: topics
+  - type: logo-wall
+    key: tools
+  - faq
+  - principles
+  - cta
 
 hero:
   eyebrow: Building and Maintaining Content with AI Agents
@@ -18,7 +34,215 @@ hero:
       url: book/chapter_01_your_first_hugo_website/
       icon: fa-solid fa-book-open
       style: primary
-    - label: Table of contents
-      url: book/
-      icon: fa-solid fa-list
+    - label: Choose a learning path
+      url: paths/
+      icon: fa-solid fa-route
       style: ghost
+
+metrics:
+  eyebrow: Count it yourself
+  title: The book in four numbers
+  desc: Each one is checkable against the chapters.
+  columns: 4
+  items:
+    - value: 19
+      label: Chapters
+      desc: from a first page to your own project
+      icon: fa-solid fa-book
+    - value: 33
+      label: Learning topics
+      desc: practised or explained along the way
+      icon: fa-solid fa-list-check
+    - value: 1
+      label: Website
+      desc: grows from chapter to chapter
+      icon: fa-solid fa-globe
+    - value: 0
+      label: Prior experience assumed
+      desc: no programming, Git, or terminal
+      icon: fa-solid fa-seedling
+
+steps:
+  title: How every chapter works
+  items:
+    - title: See the result first
+      desc: Each chapter opens with what you will have at the end and what you will be able to do.
+      icon: fa-solid fa-eye
+    - title: Make one small change early
+      desc: A working edit comes before the explanation, so every idea has something real to attach to.
+      icon: fa-solid fa-pen
+    - title: Break something on purpose
+      desc: A deliberate mistake, how to recognise it, and how to recover. The build passing is never the whole check.
+      icon: fa-solid fa-bug
+    - title: Try it your way, then save
+      desc: An independent variation shows you understood the idea. A checklist and a saved checkpoint close the chapter.
+      icon: fa-solid fa-floppy-disk
+
+paths:
+  eyebrow: Learning paths
+  title: Start where you are
+  desc: Every path builds the same website. They differ in where you spend your time.
+  columns: 4
+  link_label: See the path
+  items:
+    - name: New to building websites
+      icon: fa-solid fa-seedling
+      meta: Beginner
+      desc: Chapters 1 to 7 in order, every exercise. Your site is published by the end of Chapter 7.
+      url: paths/#new
+    - name: Some web experience
+      icon: fa-solid fa-code
+      meta: HTML and CSS, no Git
+      desc: Move quickly through the setup and markup chapters; slow down for Git and publishing.
+      url: paths/#some-experience
+    - name: Developers
+      icon: fa-solid fa-terminal
+      meta: Git and terminal daily
+      desc: Build the site briskly, then focus on agents, templates, data, and checks.
+      url: paths/#developers
+    - name: Teachers and teams
+      icon: fa-solid fa-people-group
+      meta: Shared or taught sites
+      desc: Review workflows, required checks, second languages, maintenance, and ownership.
+      url: paths/#teams
+
+timeline:
+  title: The arc of the book
+  items:
+    - date: Chapters 1–5
+      title: Build and understand a first site
+      desc: A local preview, Markdown, sections and navigation, then the HTML and CSS behind the pages.
+      url: book/chapter_01_your_first_hugo_website/
+    - date: Chapters 6–7
+      title: Record it and publish it
+      desc: Git history you can recover from, then a public address through GitHub Pages.
+      url: book/chapter_06_track_and_recover_your_hugo_site_with_git/
+    - date: Chapters 8–12
+      title: Bring in an agent and give content a structure
+      desc: One bounded agent task, then content models, Hugo templates, reusable layouts, and JSON data.
+      url: book/chapter_08_work_with_an_ai_agent_on_your_hugo_site/
+    - date: Chapters 13–17
+      title: Contribute, check, and reach readers
+      desc: Sourced agent content, checks on every change, search, a second language, and a contact form.
+      url: book/chapter_13_create_and_maintain_content_with_ai_agents/
+    - date: Chapters 18–19
+      title: Keep it running, then make your own
+      desc: Maintenance and recovery after a change is live, then a project planned from your own brief.
+      url: book/chapter_18_maintain_migrate_and_recover/
+
+topics:
+  eyebrow: Learning topics
+  title: Thirty-three topics, one continuing project
+  text:
+    Some are practised hands-on; others are explained just enough for you to
+    make informed decisions. Each tile opens the topic on the full list.
+  layout: grid
+  columns: 3
+  items:
+    - { title: Website purpose and planning,       icon: fa-solid fa-bullseye,             url: 'topics/#topic-1' }
+    - { title: How websites work,                  icon: fa-solid fa-globe,                url: 'topics/#topic-2' }
+    - { title: Static site generators,             icon: fa-solid fa-layer-group,          url: 'topics/#topic-3' }
+    - { title: 'Files, folders, and the terminal', icon: fa-solid fa-terminal,             url: 'topics/#topic-4' }
+    - { title: HTML essentials,                    icon: fa-brands fa-html5,               url: 'topics/#topic-5' }
+    - { title: CSS essentials,                     icon: fa-brands fa-css3-alt,            url: 'topics/#topic-6' }
+    - { title: Basic JavaScript literacy,          icon: fa-brands fa-js,                  url: 'topics/#topic-7' }
+    - { title: Markdown and content authoring,     icon: fa-brands fa-markdown,            url: 'topics/#topic-8' }
+    - { title: Structured data and configuration,  icon: fa-solid fa-table-list,           url: 'topics/#topic-9' }
+    - { title: Content modelling,                  icon: fa-solid fa-sitemap,              url: 'topics/#topic-10' }
+    - { title: Git and version control,            icon: fa-brands fa-git-alt,             url: 'topics/#topic-11' }
+    - { title: GitHub and collaboration,           icon: fa-brands fa-github,              url: 'topics/#topic-12' }
+    - { title: Setting up a generator,             icon: fa-solid fa-gear,                 url: 'topics/#topic-13' }
+    - { title: 'Themes, templates, and components', icon: fa-solid fa-puzzle-piece,         url: 'topics/#topic-14' }
+    - { title: Visual design and usability,        icon: fa-solid fa-pen-ruler,            url: 'topics/#topic-15' }
+    - { title: Media and downloadable assets,      icon: fa-solid fa-photo-film,           url: 'topics/#topic-16' }
+    - { title: Accessibility,                      icon: fa-solid fa-universal-access,     url: 'topics/#topic-17' }
+    - { title: AI assistants and agents,           icon: fa-solid fa-robot,                url: 'topics/#topic-18' }
+    - { title: Preparing projects for agents,      icon: fa-solid fa-folder-open,          url: 'topics/#topic-19' }
+    - { title: Giving tasks to agents,             icon: fa-solid fa-list-ol,              url: 'topics/#topic-20' }
+    - { title: AI-assisted content creation,       icon: fa-solid fa-wand-magic-sparkles,  url: 'topics/#topic-21' }
+    - { title: AI-assisted maintenance,            icon: fa-solid fa-screwdriver-wrench,   url: 'topics/#topic-22' }
+    - { title: Human review and governance,        icon: fa-solid fa-user-check,           url: 'topics/#topic-23' }
+    - { title: Build automation and publishing,    icon: fa-solid fa-rocket,               url: 'topics/#topic-24' }
+    - { title: Testing and quality assurance,      icon: fa-solid fa-vial,                 url: 'topics/#topic-25' }
+    - { title: Multilingual publishing,            icon: fa-solid fa-language,             url: 'topics/#topic-26' }
+    - { title: Search and discoverability,         icon: fa-solid fa-magnifying-glass,     url: 'topics/#topic-27' }
+    - { title: External services and features,    icon: fa-solid fa-plug,                 url: 'topics/#topic-28' }
+    - { title: Security and responsible publishing, icon: fa-solid fa-shield-halved,       url: 'topics/#topic-29' }
+    - { title: Content reuse and AI retrieval,     icon: fa-solid fa-recycle,              url: 'topics/#topic-30' }
+    - { title: Migration and portability,          icon: fa-solid fa-truck-moving,         url: 'topics/#topic-31' }
+    - { title: Long-term operation,                icon: fa-solid fa-calendar-check,       url: 'topics/#topic-32' }
+    - { title: Applying the complete workflow,     icon: fa-solid fa-graduation-cap,       url: 'topics/#topic-33' }
+
+tools:
+  eyebrow: Tools
+  title: What you will use
+  desc: The main exercises use one tool for each job. Alternatives are mentioned where they matter.
+  columns: 3
+  items:
+    - { name: Hugo, desc: Builds the website, icon: fa-solid fa-bolt, url: 'https://gohugo.io/', external: true }
+    - { name: Markdown, desc: The content format, icon: fa-brands fa-markdown, url: 'https://commonmark.org/', external: true }
+    - { name: Git, desc: History and recovery, icon: fa-brands fa-git-alt, url: 'https://git-scm.com/', external: true }
+    - { name: GitHub, desc: 'Collaboration, Pages, and Actions', icon: fa-brands fa-github, url: 'https://github.com/', external: true }
+    - { name: VS Code, desc: The suggested editor, icon: fa-solid fa-code, url: 'https://code.visualstudio.com/', external: true }
+    - { name: Codex CLI, desc: The AI agent used in the exercises, icon: fa-solid fa-robot }
+
+faq:
+  eyebrow: FAQ
+  title: Before you start
+  items:
+    - question: Who is this book for?
+      answer: >
+        Anyone who can manage files, use a browser, and install software, and
+        who wants to publish a useful website they understand. No prior
+        programming, Git, terminal, or web-publishing experience is assumed.
+      open: true
+    - question: What do I need?
+      answer: |
+        A desktop or laptop computer on which you can install software, and an
+        internet connection. From Chapter 7 you need a free GitHub account to
+        publish; from Chapter 8, an account with access to an AI agent. Each
+        chapter states its requirements before its exercises.
+    - question: Does it cost anything?
+      answer: >
+        Hugo, Git, and VS Code are free, and a public repository publishes to
+        GitHub Pages without charge. AI agent access depends on your own account
+        and its usage limits, and Chapter 8 asks you to check them before you
+        begin.
+    - question: Will the AI agent build the website for me?
+      answer: >
+        It will help, and you stay responsible for what gets published. The
+        book teaches you to give an agent a bounded task, read every change it
+        makes, check its claims against your sources, and decide publication
+        yourself.
+    - question: Why Hugo?
+      answer: >
+        One generator keeps every exercise consistent. The ideas it teaches —
+        content, templates, structured data, a build step, and a publishing
+        workflow — carry over to other static site generators.
+    - question: Is the book finished?
+      answer: >
+        All nineteen chapters are written, and the book is a working draft. Each
+        chapter opens with a note recording how far it has been tested, and
+        lecture slides and a playground are in preparation.
+
+principles:
+  eyebrow: Principles
+  title: What the book is making the case for
+  columns: 3
+  items:
+    - icon: fa-solid fa-file-lines
+      title: Plain text you control
+      desc: Your content is Markdown in folders you can copy, so it outlives any one tool or host.
+    - icon: fa-solid fa-code-compare
+      title: Every change is reviewable
+      desc: Git records what changed and why, whether a person or an agent made the change.
+    - icon: fa-solid fa-scale-balanced
+      title: Machines check rules; people judge meaning
+      desc: A passing build proves the site renders. Only a person can decide that it is true.
+
+cta:
+  title: Start with Chapter 1.
+  desc: One page, one local preview, and one deliberate mistake you will know how to repair.
+  label: Start reading
+  url: book/chapter_01_your_first_hugo_website/
+  style: primary

@@ -1,0 +1,26 @@
+# Site footer: a brand block plus link columns. Relative URLs are resolved
+# against the site's base address, so they work under /ssg-book/.
+brand:
+  name: Static Site Generators in the Age of AI
+  tagline: Building and Maintaining Content with AI Agents
+  slogan: A working draft. Each chapter records how far it has been tested.
+columns:
+  - title: Read
+    links:
+      - { label: The book, url: book/ }
+      - { label: Start with Chapter 1, url: book/chapter_01_your_first_hugo_website/ }
+      - { label: Learning paths, url: paths/ }
+      - { label: Learning topics, url: topics/ }
+  - title: Teach and practise
+    links:
+      - { label: Lecture slides, url: slides/ }
+      - { label: Playground, url: playground/ }
+  - title: News
+    links:
+      - { label: Posts, url: posts/ }
+  - title: Source
+    links:
+      - { label: This site on GitHub, url: 'https://github.com/polla-fattah/ssg-book', external: true }
+      - { label: Attribution, url: 'https://github.com/polla-fattah/ssg-book/blob/main/ATTRIBUTION.md', external: true }
+      - { label: OINK theme, url: 'https://github.com/pgsty/oink', external: true }
+      - { label: Hugo, url: 'https://gohugo.io/', external: true }

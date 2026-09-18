@@ -36,11 +36,17 @@ Open <http://localhost:1313/> in a browser. The book is available at
 
 ## Repository Structure
 
-- `content/book/` contains the published chapters. They are generated; do not
+- `content/book/` contains the published chapters, and
+  `content/topics/_index.md` the learning topics. Both are generated; do not
   edit them here.
 - `content/book/_index.md` defines the Book section.
-- `data/home.yaml` defines the home page.
-- `hugo.yaml` contains the site configuration.
+- `content/paths/`, `content/posts/`, `content/slides/`, and
+  `content/playground/` hold the other sections. Slides and Playground are
+  placeholders until their material exists.
+- `data/home.yaml` defines the home page, section by section, and
+  `data/footer.yaml` the footer.
+- `hugo.yaml` contains the site configuration, including the top navigation
+  under `menus.main`.
 - `layouts/` contains the templates used to render the website.
 - `ATTRIBUTION.md` records the project's licensing context.
 
@@ -50,15 +56,18 @@ workspace. This repository contains the publishable website.
 ## Update the Chapters
 
 The manuscript in the parent workspace's `Chapters and plan/` folder is the
-single source. After editing it, regenerate the website copies:
+single source for the chapters and the learning topics. After editing it,
+regenerate the website copies:
 
 ```sh
-python3 bin/sync-book.py            # write content/book/
-python3 bin/sync-book.py --check    # exit 1 if content/book/ is out of date
+python3 bin/sync-book.py            # write the generated pages
+python3 bin/sync-book.py --check    # exit 1 if any generated page is out of date
 ```
 
 The script adds each chapter's title and order as front matter and copies the
-rest of the chapter unchanged.
+rest of the chapter unchanged. It turns each learning topic into a heading with
+a stable `#topic-N` anchor, which the home page's topic tiles link to. If you
+rename or renumber a topic, update its tile in `data/home.yaml` too.
 
 ## Publish
 
