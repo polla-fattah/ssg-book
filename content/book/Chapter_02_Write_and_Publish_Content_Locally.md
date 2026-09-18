@@ -1,4 +1,7 @@
-# Chapter 2 — Write and Publish Content Locally
+---
+title: "Chapter 2 — Write and Publish Content Locally"
+weight: 2
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

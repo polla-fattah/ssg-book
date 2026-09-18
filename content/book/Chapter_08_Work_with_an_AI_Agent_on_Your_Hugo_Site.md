@@ -1,4 +1,7 @@
-# Chapter 8 — Work with an AI Agent on Your Hugo Site
+---
+title: "Chapter 8 — Work with an AI Agent on Your Hugo Site"
+weight: 8
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

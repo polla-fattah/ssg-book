@@ -1,4 +1,7 @@
-# Chapter 11 — Build Reusable Hugo Layouts
+---
+title: "Chapter 11 — Build Reusable Hugo Layouts"
+weight: 11
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

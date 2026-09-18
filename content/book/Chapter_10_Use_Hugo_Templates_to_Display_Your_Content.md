@@ -1,4 +1,7 @@
-# Chapter 10 — Use Hugo Templates to Display Your Content
+---
+title: "Chapter 10 — Use Hugo Templates to Display Your Content"
+weight: 10
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

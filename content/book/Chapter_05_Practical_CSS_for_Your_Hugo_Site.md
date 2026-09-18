@@ -1,4 +1,7 @@
-# Chapter 5 — Practical CSS for Your Hugo Site
+---
+title: "Chapter 5 — Practical CSS for Your Hugo Site"
+weight: 5
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

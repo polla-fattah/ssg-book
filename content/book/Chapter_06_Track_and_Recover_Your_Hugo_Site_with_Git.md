@@ -1,4 +1,7 @@
-# Chapter 6 — Track and Recover Your Hugo Site with Git
+---
+title: "Chapter 6 — Track and Recover Your Hugo Site with Git"
+weight: 6
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

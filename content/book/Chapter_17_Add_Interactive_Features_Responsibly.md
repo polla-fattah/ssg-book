@@ -1,4 +1,7 @@
-# Chapter 17 — Add Interactive Features Responsibly
+---
+title: "Chapter 17 — Add Interactive Features Responsibly"
+weight: 17
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

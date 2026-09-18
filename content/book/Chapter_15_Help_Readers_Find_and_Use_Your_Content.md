@@ -1,4 +1,7 @@
-# Chapter 15 — Help Readers Find and Use Your Content
+---
+title: "Chapter 15 — Help Readers Find and Use Your Content"
+weight: 15
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

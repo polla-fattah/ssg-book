@@ -1,4 +1,7 @@
-# Chapter 19 — Build Your Own Publishing Project
+---
+title: "Chapter 19 — Build Your Own Publishing Project"
+weight: 19
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

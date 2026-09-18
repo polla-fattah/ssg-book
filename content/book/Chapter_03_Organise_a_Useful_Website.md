@@ -1,4 +1,7 @@
-# Chapter 3 — Organise a Useful Website
+---
+title: "Chapter 3 — Organise a Useful Website"
+weight: 3
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

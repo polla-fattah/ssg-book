@@ -1,4 +1,7 @@
-# Chapter 1 — Your First Hugo Website
+---
+title: "Chapter 1 — Your First Hugo Website"
+weight: 1
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

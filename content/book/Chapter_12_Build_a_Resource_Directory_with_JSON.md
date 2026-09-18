@@ -1,4 +1,7 @@
-# Chapter 12 — Build a Resource Directory with JSON
+---
+title: "Chapter 12 — Build a Resource Directory with JSON"
+weight: 12
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

@@ -1,4 +1,7 @@
-# Chapter 7 — Publish Your Hugo Site with GitHub Pages
+---
+title: "Chapter 7 — Publish Your Hugo Site with GitHub Pages"
+weight: 7
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

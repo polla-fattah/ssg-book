@@ -1,4 +1,7 @@
-# Chapter 4 — Understand the HTML Behind Your Pages
+---
+title: "Chapter 4 — Understand the HTML Behind Your Pages"
+weight: 4
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

@@ -1,4 +1,7 @@
-# Chapter 9 — Give Your Hugo Content a Consistent Structure
+---
+title: "Chapter 9 — Give Your Hugo Content a Consistent Structure"
+weight: 9
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

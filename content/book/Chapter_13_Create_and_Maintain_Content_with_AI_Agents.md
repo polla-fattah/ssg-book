@@ -1,4 +1,7 @@
-# Chapter 13 — Create and Maintain Content with AI Agents
+---
+title: "Chapter 13 — Create and Maintain Content with AI Agents"
+weight: 13
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

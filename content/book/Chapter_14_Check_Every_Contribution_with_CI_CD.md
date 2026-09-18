@@ -1,4 +1,7 @@
-# Chapter 14 — Check Every Contribution with CI/CD
+---
+title: "Chapter 14 — Check Every Contribution with CI/CD"
+weight: 14
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

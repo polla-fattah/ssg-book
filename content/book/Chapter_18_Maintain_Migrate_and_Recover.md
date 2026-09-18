@@ -1,4 +1,7 @@
-# Chapter 18 — Maintain, Migrate, and Recover
+---
+title: "Chapter 18 — Maintain, Migrate, and Recover"
+weight: 18
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*

@@ -1,4 +1,7 @@
-# Chapter 16 — Publish in Multiple Languages
+---
+title: "Chapter 16 — Publish in Multiple Languages"
+weight: 16
+---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
