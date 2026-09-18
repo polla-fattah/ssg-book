@@ -79,6 +79,6 @@ substitute the equivalent in your project.
 
 ## Teaching this book
 
-[Lecture slides](../slides/) for teaching the book in a classroom are in
-preparation. Until then, the complete path is the order the chapters were
-written to be taught in.
+[Lecture slides](../slides/) for teaching the book in a classroom are being
+added chapter by chapter, starting with the course introduction. The complete
+path is the order the chapters were written to be taught in.

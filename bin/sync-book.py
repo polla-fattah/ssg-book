@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the book pages from the book manuscript.
 
-The manuscript stays the single source. This script writes two things:
+The manuscript stays the single source. This script writes three things:
 
 - content/book/: one page per chapter. The manuscript chapters open with a
   "# Title" heading and carry no front matter. The Book shell renders the
@@ -12,6 +12,9 @@ The manuscript stays the single source. This script writes two things:
 - content/topics/_index.md: the learning topics from learning-topics.md, with
   each numbered topic as a heading carrying a stable {#topic-N} anchor that
   the home page links to. The manuscript's planning preface is not copied.
+- content/slides/NN-name/index.md: one lecture deck per slides/NN-name.md,
+  copied unchanged. Each deck carries its own front matter, and its slides are
+  separated by --- lines; layouts/slides/page.html presents them.
 
 Edit the manuscript, then run:
 
@@ -33,7 +36,10 @@ DEFAULT_SOURCE = ROOT.parent / "Chapters and plan"
 BOOK = ROOT / "content" / "book"
 TOPICS = ROOT / "content" / "topics" / "_index.md"
 TOPICS_SOURCE = "learning-topics.md"
+SLIDES = ROOT / "content" / "slides"
+SLIDES_SOURCE = "slides"
 CHAPTER = re.compile(r"^Chapter_(\d{2})_.+\.md$")
+DECK = re.compile(r"^\d{2}-[a-z0-9-]+\.md$")
 HEADING = re.compile(r"^# (.+)$")
 TOPIC = re.compile(r"^(\d+)\. \*\*(.+?)\*\*\s*$")
 BULLET = re.compile(r"^\s+\*\s+(.+)$")
@@ -114,9 +120,15 @@ def main() -> int:
         print(f"{TOPICS_SOURCE} not found in {args.source}", file=sys.stderr)
         return 2
 
+    decks_dir = args.source / SLIDES_SOURCE
+    decks = sorted(p for p in decks_dir.iterdir() if DECK.match(p.name)) if decks_dir.is_dir() else []
+
     wanted = {BOOK / p.name: render_chapter(p) for p in chapters}
     wanted[TOPICS] = render_topics(topics_source)
-    removed = sorted(set(BOOK.glob("Chapter_*.md")) - wanted.keys())
+    for deck in decks:
+        wanted[SLIDES / deck.stem / "index.md"] = deck.read_text(encoding="utf-8")
+    managed = set(BOOK.glob("Chapter_*.md")) | set(SLIDES.glob("*/index.md"))
+    removed = sorted(managed - wanted.keys())
     stale = []
 
     for target, text in wanted.items():
@@ -131,12 +143,14 @@ def main() -> int:
         stale.append(target)
         if not args.check:
             target.unlink()
+            if target.parent.parent == SLIDES and not any(target.parent.iterdir()):
+                target.parent.rmdir()
 
     verb = "stale" if args.check else "updated"
     for target in stale:
         note = " (no longer in the manuscript)" if target in removed else ""
         print(f"{verb}: {target.relative_to(ROOT).as_posix()}{note}")
-    print(f"{len(chapters)} chapters and the topics page, {len(stale)} {verb}")
+    print(f"{len(chapters)} chapters, the topics page, and {len(decks)} slide decks: {len(stale)} {verb}")
     return 1 if args.check and stale else 0
 
 

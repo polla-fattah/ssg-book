@@ -229,8 +229,9 @@ faq:
     - question: Is the book finished?
       answer: >
         All nineteen chapters are written, and the book is a working draft. Each
-        chapter opens with a note recording how far it has been tested, and
-        lecture slides and a playground are in preparation.
+        chapter opens with a note recording how far it has been tested.
+        Lecture slides are being added chapter by chapter, starting with the
+        course introduction, and a playground is in preparation.
 
 principles:
   eyebrow: Principles

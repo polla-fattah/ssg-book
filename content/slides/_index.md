@@ -1,9 +1,12 @@
 ---
 title: "Lecture slides"
-description: "Slides for teaching the book in a classroom. In preparation."
+description: "Slides for teaching the book in a classroom, one deck per chapter."
 type: docs
 ---
 
-Slides for teaching each chapter in a classroom are in preparation and will be published here.
+Slides for teaching the book in a classroom, one deck per chapter. Decks are
+added in order, starting with the course introduction.
 
-Until then, every chapter of [the book](../book/) is complete enough to teach from: each one opens with its learning outcomes and ends with a completion checklist.
+Open a deck to present it. Use the arrow keys or the space bar to move between
+slides, and press **F** for full screen. Every deck also prints one slide per
+page, for handouts or a PDF.

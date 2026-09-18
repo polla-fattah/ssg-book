@@ -41,8 +41,8 @@ Open <http://localhost:1313/> in a browser. The book is available at
   edit them here.
 - `content/book/_index.md` defines the Book section.
 - `content/paths/`, `content/posts/`, `content/slides/`, and
-  `content/playground/` hold the other sections. Slides and Playground are
-  placeholders until their material exists.
+  `content/playground/` hold the other sections. Playground is a placeholder
+  until its material exists.
 - `data/home.yaml` defines the home page, section by section, and
   `data/footer.yaml` the footer.
 - `hugo.yaml` contains the site configuration, including the top navigation
@@ -65,9 +65,19 @@ python3 bin/sync-book.py --check    # exit 1 if any generated page is out of dat
 ```
 
 The script adds each chapter's title and order as front matter and copies the
-rest of the chapter unchanged. It turns each learning topic into a heading with
-a stable `#topic-N` anchor, which the home page's topic tiles link to. If you
-rename or renumber a topic, update its tile in `data/home.yaml` too.
+rest of the chapter unchanged. It turns each learning topic into a heading
+with a stable `#topic-N` anchor, which the home page's topic tiles link to. If
+you rename or renumber a topic, update its tile in `data/home.yaml` too.
+
+## Lecture Slides
+
+Each deck is one Markdown file in the parent workspace's
+`Chapters and plan/slides/` folder, named `NN-name.md`, with slides separated
+by `---` lines. `bin/sync-book.py` copies it to `content/slides/NN-name/`, and
+`layouts/slides/page.html` presents it: arrow keys or space to move, **F** for
+full screen, `#7` in the address to open slide 7. Printing a deck from the
+browser gives one slide per 16 × 9 inch page; keep that PDF beside its
+Markdown source.
 
 ## Publish
 
