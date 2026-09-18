@@ -6,11 +6,12 @@
 # theme it contains, so it is a site as well as a module. baseURL is left
 # unset: `hugo server` previews at the root, and the Pages workflow passes the
 # published address with --baseURL.
-title: Static Site Generators in the Age of AI
+title: SSG Book
 locale: en
 
 # Top navigation. Each pageRef must point at an existing page, or the strict
 # build fails; Slides and Playground have placeholder pages until they exist.
+# `icon: false` shows an entry as text only; without it the theme picks an icon.
 menus:
   main:
     - identifier: book
@@ -18,25 +19,25 @@ menus:
       pageRef: /book
       weight: 10
       params:
-        icon: fa-solid fa-book
+        icon: false
     - identifier: slides
       name: Lecture slides
       pageRef: /slides
       weight: 20
       params:
-        icon: fa-solid fa-person-chalkboard
+        icon: false
     - identifier: playground
       name: Playground
       pageRef: /playground
       weight: 30
       params:
-        icon: fa-solid fa-flask
+        icon: false
     - identifier: posts
       name: Posts
       pageRef: /posts
       weight: 40
       params:
-        icon: fa-solid fa-newspaper
+        icon: false
 
 params:
   # Highlight code with Chroma class names so it follows the theme's light/dark

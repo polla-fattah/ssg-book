@@ -193,6 +193,7 @@
       }
     }
 
+    .td-landing-hero__subtitle,
     .td-landing-hero__lead {
       margin-inline: auto;
       max-width: 640px;
@@ -224,6 +225,17 @@
       display: block;
       white-space: nowrap;
     }
+  }
+
+  // Optional line directly under the title, in the eyebrow's colour without
+  // its status dot or small capitals.
+  &__subtitle {
+    max-width: 660px;
+    margin: -6px 0 20px;
+    color: var(--td-brand-silk);
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    font-style: italic;
+    text-wrap: balance;
   }
 
   &__lead {

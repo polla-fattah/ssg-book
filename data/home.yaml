@@ -21,8 +21,10 @@ sections:
   - cta
 
 hero:
-  eyebrow: Building and Maintaining Content with AI Agents
   title: Static Site Generators in the Age of AI
+  # Caps the title's size; below about 950px wide it scales with the window.
+  title_size: 3.2rem
+  subtitle: Building and Maintaining Content with AI Agents
   desc: >
     One small website, built from its first Markdown page through publication,
     review, and long-term maintenance, with an AI agent helping and a person
