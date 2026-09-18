@@ -1,12 +1,13 @@
 ---
-title: "Chapter 1 — Your First Hugo Website"
+title: "Your First Hugo Website"
 weight: 1
+book_number: 1
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 on Linux. No beginner trial, browser review, or Windows/macOS installation walkthrough yet.*
 
 You have something worth sharing: notes from your work, an explanation you have written, a useful collection of resources, or a project you want others to understand. A website gives those materials a place where people can find and read them.
@@ -413,7 +414,7 @@ The starter uses `all.html` as a general HTML layout, following Hugo's newer tem
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This is a self-contained chapter draft for review. To honour the request for one Markdown file, the starter is embedded in the chapter instead of referring to an unavailable companion download. This is a provisional adaptation of the blueprint's packaged starter-theme approach; it does not select a third-party theme for the whole book.
 

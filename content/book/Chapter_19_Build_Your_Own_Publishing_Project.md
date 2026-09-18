@@ -1,12 +1,13 @@
 ---
-title: "Chapter 19 — Build Your Own Publishing Project"
+title: "Build Your Own Publishing Project"
 weight: 19
+book_number: 19
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *A planning chapter with no new software steps. The worked brief and the feature table are authored; no project has been built from them and no beginner trial has been run.*
 
 Eighteen chapters ago you did not have a website. You now have one that is published, checked before every change, searchable, partly bilingual, able to receive a message, and covered by a maintenance routine you wrote yourself. More importantly, you have done each of those things once, deliberately, and can explain why.
@@ -110,7 +111,7 @@ And prefer **later** to **yes** when you are unsure. A site that does five thing
 
 Before you build anything, test the brief you have just written. Most first drafts fail at least one of these, so finding a failure here is the exercise working rather than going wrong.
 
-**The scope test.** Give the brief to someone who does not know the project — or leave it a day and read it as a stranger. Ask them to name two things the site will *not* do. If they cannot, your out-of-scope section is decoration. Rewrite it with specifics: not a blog, not a discussion forum, not a place to submit work, not translated, no accounts.
+**The scope test.** Give the brief to someone who does not know the project, or leave it a day and read it as a stranger. Ask them to name two things the site will *not* do. If they cannot, your out-of-scope section is decoration. Rewrite it with specifics: not a blog, not a discussion forum, not a place to submit work, not translated, no accounts.
 
 **The checkability test.** Take each requirement in turn and ask which of three things will verify it:
 
@@ -150,7 +151,7 @@ Whichever you choose, do this before writing content:
 5. Adjust the Chapter 14 rules to your own content model. The description rule names `content/articles/` and `content/projects/`; your sections are different.
 6. Delete the capabilities you marked **no**, rather than leaving them switched off. Unused templates and scripts are things a future reader must understand before changing anything.
 
-Then create your own first page, publish it, and confirm the whole chain works — build, checks, deployment, live address — before there is enough content for a problem to hide in.
+Then create your own first page, publish it, and confirm the whole chain works (build, checks, deployment, live address) before there is enough content for a problem to hide in.
 
 ## 19.6 Agree who reviews and who maintains
 
@@ -182,7 +183,7 @@ So the order is:
 4. Review the changed files, not the summary.
 5. Keep the rule from Chapter 16: do not publish what you cannot review, in any language.
 
-Two tasks suit an agent well on a new project, and both are structural rather than factual. Setting up a repetitive section — twelve week pages from a schedule you supply — is work with a clear right answer you can check at a glance. So is adjusting the Chapter 14 rules to your content model, since you can read the result and run it locally.
+Two tasks suit an agent well on a new project, and both are structural rather than factual. Setting up a repetitive section, such as twelve week pages from a schedule you supply, is work with a clear right answer you can check at a glance. So is adjusting the Chapter 14 rules to your content model, since you can read the result and run it locally.
 
 One task suits it badly: deciding what the site should contain. That is your brief, and delegating it produces a plausible site for a project nobody has.
 
@@ -294,13 +295,13 @@ Read what that brief refuses. No forum, no accounts, no translation, no analytic
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This chapter deliberately teaches no new software. Everything it asks for exists by Chapter 18, and the work is deciding rather than building. That makes it structurally unlike the other eighteen, and two consequences need to be accepted rather than smoothed away: the guided exercise is a planning sequence whose output differs for every reader, and the comparison appendix is a worked brief rather than a file to match.
 
 It is also the only chapter with no forward pointer, because there is no Chapter 20. The closing prose in Section 19.8 replaces it, and the completion check's closing paragraph names what lies outside the book instead of what comes next. Any automated consistency check over the chapters should expect that exception rather than flagging it.
 
-Section 19.4 is the designed failure, and the only one in the book that is not technical. A first brief usually fails the scope or checkability test, and the chapter says so in advance so a reader treats the failure as the exercise working. The three-row verification table is Chapter 14's automated-versus-human distinction moved one step earlier, before the work exists, which is where it saves the most effort. The third row — "nothing" — is the load-bearing part.
+Section 19.4 is the designed failure, and the only one in the book that is not technical. A first brief usually fails the scope or checkability test, and the chapter says so in advance so a reader treats the failure as the exercise working. The three-row verification table is Chapter 14's automated-versus-human distinction moved one step earlier, before the work exists, which is where it saves the most effort. The third row, "nothing", is the load-bearing part.
 
 The capability table in Section 19.3 is the chapter's most useful artifact and the most likely to rot. It must be re-derived if chapters are renumbered or a capability moves. The yes/later/no instruction matters more than the table: the book's arc has been additive, and this is the one place that teaches subtraction.
 

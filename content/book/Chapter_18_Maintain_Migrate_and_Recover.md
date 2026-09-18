@@ -1,12 +1,13 @@
 ---
-title: "Chapter 18 — Maintain, Migrate, and Recover"
+title: "Maintain, Migrate, and Recover"
 weight: 18
+book_number: 18
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *The added version check was verified against a fixture. No Hugo build, GitHub Actions run, deployment, revert against a live site, or beginner trial yet.*
 
 Your notebook works. It is published, checked on every proposal, searchable, bilingual in part, and able to receive a message. Nothing about it is finished, because a website that nobody maintains does not stay still; it goes quietly out of date while appearing to work perfectly.
@@ -90,7 +91,7 @@ To update Hugo deliberately, do it as a proposal rather than in place:
 
 That is what the arrangement from Chapter 14 is for. A dependency update is exactly the kind of change that looks harmless and occasionally is not.
 
-The action versions in both workflows — `actions/checkout@v7`, `actions/configure-pages@v6`, and the rest — are pinned the same way and need the same treatment. Update them one at a time rather than together, so that a failure tells you which one caused it.
+The action versions in both workflows (`actions/checkout@v7`, `actions/configure-pages@v6`, and the rest) are pinned the same way and need the same treatment. Update them one at a time rather than together, so that a failure tells you which one caused it.
 
 ## 18.3 Retire a page without breaking its address
 
@@ -231,7 +232,7 @@ Your history now contains both the mistake and its correction, which is the hone
 
 You have your working copy and a copy on GitHub. It is easy to treat the second as a backup, and it is not one.
 
-A **remote** is a copy that exists so you can collaborate and publish. A **backup** is a copy that survives the failure you are worried about. If the failure you are worried about is losing your laptop, GitHub covers it. If it is losing access to your GitHub account — a suspension, a lost recovery method, a change of terms, an organisation you leave — then GitHub is the thing that failed, and it cannot also be the recovery.
+A **remote** is a copy that exists so you can collaborate and publish. A **backup** is a copy that survives the failure you are worried about. If the failure you are worried about is losing your laptop, GitHub covers it. If it is losing access to your GitHub account (a suspension, a lost recovery method, a change of terms, an organisation you leave), then GitHub is the thing that failed, and it cannot also be the recovery.
 
 Keep three copies, in two places you control differently:
 
@@ -313,7 +314,7 @@ Add one entry to `AGENTS.md` under Files, and one working agreement:
 
 That second agreement is the Section 18.4 mistake, written down so that neither you nor an agent makes it again. This is what the instruction file is for: a decision you had to learn becomes a rule you no longer have to remember.
 
-Two extensions belong here as directions rather than exercises. **Content reuse** is the observation that your resource directory is structured data with an agreement, so it could feed something else — a printed list, another site, a course page — by reading the same JSON rather than copying it. **Retrieval** is the idea of pointing an agent at your own accumulated content to answer questions from it. Both are reasonable next steps and both are outside this book's scope, for the same reason: they need a clear account of what is authoritative and what happens when the source changes, and that is a larger subject than an exercise.
+Two extensions belong here as directions rather than exercises. **Content reuse** is the observation that your resource directory is structured data with an agreement, so it could feed something else, such as a printed list, another site, or a course page, by reading the same JSON rather than copying it. **Retrieval** is the idea of pointing an agent at your own accumulated content to answer questions from it. Both are reasonable next steps and both are outside this book's scope, for the same reason: they need a clear account of what is authoritative and what happens when the source changes, and that is a larger subject than an exercise.
 
 ## 18.8 Complete the pass, propose it, and save
 
@@ -373,7 +374,7 @@ A maintenance pass finds what you thought to ask about. Keep `MAINTENANCE.md` as
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 The findings are real rather than invented. The reading-list page genuinely became untrue over Chapters 9 to 16: it claims the reading work has not begun while Chapter 12's resource directory does that job. Verify on replay that the wording still reads as stale; if earlier chapters are revised, re-derive this finding rather than assuming it. The leftover Chapter 1 to 5 backup folders are the second real finding and should stay, because readers will have them.
 
@@ -381,6 +382,6 @@ Section 18.4 is the designed failure and the most carefully constructed thing he
 
 Section 18.3 declines to fake a migration. No address must change, so the alias is verified as a mechanism and then removed, with the honest framing that Chapter 3's naming is why no redirect is needed. Do not replace this with an invented rename.
 
-At about 3,830 words of reader-facing prose this is the longest chapter, against a previous maximum of 3,690 — a measured overrun, since this plan row lists eleven topics where most list three or four. Split Section 18.6 if the trial shows it running long: credentials, licensing, privacy, cost, and ownership are a coherent chapter of their own.
+At about 3,830 words of reader-facing prose this is the longest chapter, against a previous maximum of 3,690: a measured overrun, since this plan row lists eleven topics where most list three or four. Split Section 18.6 if the trial shows it running long: credentials, licensing, privacy, cost, and ownership are a coherent chapter of their own.
 
 The version-match step was executed against a fixture, and working through the sequence corrected two drafting faults. Nothing else is validated. See the validation record.

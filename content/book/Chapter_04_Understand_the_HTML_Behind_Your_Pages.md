@@ -1,12 +1,13 @@
 ---
-title: "Chapter 4 — Understand the HTML Behind Your Pages"
+title: "Understand the HTML Behind Your Pages"
 weight: 4
+book_number: 4
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 on Linux. No beginner trial; the developer-tools and keyboard exercises are not browser-tested yet.*
 
 You have written articles, created sections, and changed the navigation of your website. Now we will look at what the browser receives when it displays those pages.
@@ -437,7 +438,7 @@ Use this as a recovery reference for `layouts/all.html` if an edit went wrong. I
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This chapter continues the seven-page project from Chapter 3. It prioritises inspection and source tracing over adding features. The only required persistent modification is the shared footer; the optional tables and form-control fragments are recognition examples, not project additions. The complete layout is a recovery reference, not a replacement for the earlier content files.
 

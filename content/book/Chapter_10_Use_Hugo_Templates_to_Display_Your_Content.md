@@ -1,12 +1,13 @@
 ---
-title: "Chapter 10 — Use Hugo Templates to Display Your Content"
+title: "Use Hugo Templates to Display Your Content"
 weight: 10
+book_number: 10
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial, browser review, or deployment yet.*
 
 Your two project pages now contain useful information in their front matter. The description, status, and tools are organised, but visitors cannot see them yet. You also maintain a separate list of project links by hand.
@@ -462,7 +463,7 @@ This is the core result before the independent status-in-the-list variation. Use
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This chapter introduces a small working subset of Go templates: value output, conditions, `with`, `range`, context, one existing pipe, page collections, and page URLs. Keep variables, partials, base templates, more elaborate lookups, and data transformations out of this exercise. Chapter 11 should start from the two-file checkpoint and retain the independent addition of status to each list entry.
 

@@ -1,12 +1,13 @@
 ---
-title: "Chapter 2 — Write and Publish Content Locally"
+title: "Write and Publish Content Locally"
 weight: 2
+book_number: 2
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 (standard edition) on Linux. No beginner trial, browser review, or screenshot capture yet.*
 
 In Chapter 1, you changed a home page. Now you will give your website something more substantial to read: its first article.
@@ -485,7 +486,7 @@ I will write another short note about something I can explain clearly.
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This draft continues the exact four-file starter embedded in Chapter 1. It does not assume a third-party theme, an automated article listing, a content-generation archetype, a Git repository, or an installed AI agent. The shared layout already renders individual pages. The added CSS supports screenshots and code blocks without requiring a separate styling lesson.
 

@@ -1,12 +1,13 @@
 ---
-title: "Chapter 16 — Publish in Multiple Languages"
+title: "Publish in Multiple Languages"
 weight: 16
+book_number: 16
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *The added CI check was verified against a fixture. No Hugo build, browser review, right-to-left rendering check, native-speaker review of the Kurdish strings, or beginner trial yet.*
 
 Your notebook is in English. If some of your readers would rather read Kurdish, or if your work belongs to a place where two languages are normal, the site should be able to say the same things twice.
@@ -146,7 +147,7 @@ One more link needs the same treatment, and it is not in the file you were just 
 Read <a href="{{ "about/" | relLangURL }}">about this notebook</a>.
 ```
 
-The footer appears on every page in both languages. Left as `relURL`, it would have sent Kurdish readers to the English About page from the bottom of every Kurdish page — a link that works, points somewhere real, and is still wrong. When you change how links are built, search the whole `layouts` folder rather than only the file in front of you.
+The footer appears on every page in both languages. Left as `relURL`, it would have sent Kurdish readers to the English About page from the bottom of every Kurdish page: a link that works, points somewhere real, and is still wrong. When you change how links are built, search the whole `layouts` folder rather than only the file in front of you.
 
 Its visible wording stays English for now. That is remaining translation work rather than a defect: like the five untranslated pages, it is a known gap, and Section 16.5 is about stating such gaps rather than hiding them.
 
@@ -434,7 +435,7 @@ params:
 
 ## دەستپێک
 
-- [دەربارە](about/) — دەربارەی ئەم ماڵپەرە.
+- [دەربارە](about/): دەربارەی ئەم ماڵپەرە.
 
 ## زمانی ئینگلیزی
 
@@ -461,7 +462,7 @@ Note what the Kurdish home page does not do: it does not reproduce the four-item
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 Every Kurdish string here, in the `i18n` file and the comparison pages, must be reviewed by a Sorani speaker before publication. The navigation terms are standard web-interface words and should be low risk; the page bodies are short and deliberately plain, but they remain unreviewed machine-produced Kurdish in a chapter whose own rule forbids exactly that. Treat the chapter as failing its own standard until that review happens. Arabic is offered in the opening for authors without a Sorani reviewer.
 

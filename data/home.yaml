@@ -210,9 +210,9 @@ faq:
         yourself.
     - question: Why Hugo?
       answer: >
-        One generator keeps every exercise consistent. The ideas it teaches —
-        content, templates, structured data, a build step, and a publishing
-        workflow — carry over to other static site generators.
+        One generator keeps every exercise consistent. The ideas it teaches
+        (content, templates, structured data, a build step, and a publishing
+        workflow) carry over to other static site generators.
     - question: Is the book finished?
       answer: >
         All nineteen chapters are written, and the book is a working draft. Each

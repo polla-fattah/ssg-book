@@ -1,19 +1,20 @@
 ---
-title: "Chapter 17 — Add Interactive Features Responsibly"
+title: "Add Interactive Features Responsibly"
 weight: 17
+book_number: 17
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *The browser script was checked in isolation. No Hugo build, browser review, mail-client handoff test, or beginner trial yet.*
 
 Readers who find something useful on your site may want to reply to it. A contact form is the obvious way to invite that, and it is also the point where a static site meets its actual limit.
 
 Your site is a set of files. It has no program running on a server, so there is nothing on your side to receive a submitted message. In this chapter you will build a proper contact form, watch it fail to send, and then make it work in the one way a site like yours can without collecting anyone's data: by handing the message to the visitor's own mail program.
 
-The visible result is a Contact page with a form that validates what the visitor types and opens a pre-filled message in their mail client. The lasting result is a clear map of where work can happen — during your build, in the visitor's browser, or on somebody else's server — and an honest account of what each choice costs.
+The visible result is a Contact page with a form that validates what the visitor types and opens a pre-filled message in their mail client. The lasting result is a clear map of where work can happen (during your build, in the visitor's browser, or on somebody else's server) and an honest account of what each choice costs.
 
 ## What you will be able to do
 
@@ -38,7 +39,7 @@ Every feature on a website runs somewhere, and there are only three somewheres a
 | The visitor's browser | Each time someone opens a page | The search filtering from Chapter 15 |
 | Someone else's server | When something asks it to | Nothing yet |
 
-Build-time work is the cheapest and safest: it happens on your computer or on a GitHub runner, it cannot fail in front of a visitor, and it produces plain files. Browser work can respond to a person, but it only has what the page already contains. Server work can do things neither of the others can — store a message, send an email, charge a card — and it is the only one that introduces an account, a cost, a privacy obligation, and something that can be unavailable.
+Build-time work is the cheapest and safest: it happens on your computer or on a GitHub runner, it cannot fail in front of a visitor, and it produces plain files. Browser work can respond to a person, but it only has what the page already contains. Server work can do things neither of the others can (store a message, send an email, charge a card), and it is the only one that introduces an account, a cost, a privacy obligation, and something that can be unavailable.
 
 A form is interesting precisely because it straddles the boundary. Collecting what someone types is browser work. *Receiving* it is server work, and you do not have a server.
 
@@ -284,7 +285,7 @@ A **serverless function** is a small program your hosting provider runs on reque
 
 Read that table as a set of trades rather than a ranking. For a personal notebook that receives occasional messages, the first column is often the right answer. For a form people rely on, it is usually not.
 
-Choose deliberately, and write the choice down somewhere — a note in the repository, or a line in `AGENTS.md` — so that a future contribution, from you or an agent, does not quietly replace one with another.
+Choose deliberately, and write the choice down somewhere, such as a note in the repository or a line in `AGENTS.md`, so that a future contribution, from you or an agent, does not quietly replace one with another.
 
 ## 17.7 Why you cannot keep a secret in a static site
 
@@ -296,7 +297,7 @@ You cannot use a key like that in your published site. Everything the browser ne
 
 There are two honest ways around it, and both come back to Section 17.1.
 
-Fetch the data **at build time**. Hugo can request a remote address while generating the site, so the key lives in your build environment — a GitHub Actions secret rather than a file in the repository — and only the *result* is published. The data is as fresh as your last build, which for a notebook is usually fine.
+Fetch the data **at build time**. Hugo can request a remote address while generating the site, so the key lives in your build environment (a GitHub Actions secret rather than a file in the repository), and only the *result* is published. The data is as fresh as your last build, which for a notebook is usually fine.
 
 Or put the key **on a server you control**, in a function that holds it and passes on only what the page needs. That is the serverless option from Section 17.6, with the same costs.
 
@@ -388,7 +389,7 @@ A form that collects nothing still makes a promise to the person filling it in. 
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 Section 17.3's failure is the chapter's spine: a beginner presses a button, loses their text, and possibly sees it in the address bar. That is a real defect of naive static forms and the most memorable way to teach where processing occurs. Keep the leaked-values observation; it makes the limit feel consequential rather than academic.
 
@@ -396,6 +397,6 @@ Requiring no account was a firm constraint, following the blueprint's rule that 
 
 Section 17.7 earns its own section: a static site cannot hold a secret. It is the concrete reason build-time fetching exists, it connects to Chapter 6's point that history is permanent, and it forestalls the most likely serious mistake a reader could make with an API. Do not soften the revoke-immediately instruction.
 
-The Kurdish gap in Section 17.8 is intentional and left unresolved. A footer link added here creates a dead destination in the language added in Chapter 16 — exactly the maintenance cost Section 16.7 described, arriving one chapter later. Offering the reader two honest repairs rather than supplying one makes the trade explicit.
+The Kurdish gap in Section 17.8 is intentional and left unresolved. A footer link added here creates a dead destination in the language added in Chapter 16: exactly the maintenance cost Section 16.7 described, arriving one chapter later. Offering the reader two honest repairs rather than supplying one makes the trade explicit.
 
 The Section 17.4 script was executed against a stand-in for its page, which corrected how the address is encoded. No Hugo build, browser, or mail-client handoff has been tested. See the validation record.

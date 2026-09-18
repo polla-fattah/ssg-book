@@ -1,12 +1,13 @@
 ---
-title: "Chapter 5 — Practical CSS for Your Hugo Site"
+title: "Practical CSS for Your Hugo Site"
 weight: 5
+book_number: 5
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 on Linux. No beginner trial; responsive, zoom, and focus behaviour are not browser-tested yet.*
 
 Your notebook already has a readable layout. In Chapter 4, you inspected its HTML and added a footer note. Now you will give that note a style and make two small adjustments to the reading experience.
@@ -98,7 +99,7 @@ Our layout already includes:
 
 Keep that line intact. On the local preview at the site root, it normally produces a link to `/css/site.css`. All seven authored pages load the same CSS file. Hugo supplies the files and resolved address; the browser applies the CSS.
 
-To see what the browser receives, open `/css/site.css` on the same preview address—for example, `http://localhost:1313/css/site.css` when Hugo is using that address. You should see the stylesheet text, including your new rule. Return to the page afterwards.
+To see what the browser receives, open `/css/site.css` on the same preview address, for example `http://localhost:1313/css/site.css` when Hugo is using that address. You should see the stylesheet text, including your new rule. Return to the page afterwards.
 
 Edit the source under `static/`, not the generated copy under `public/`. A build can replace the latter. Putting CSS into the article's Markdown body will not update the shared stylesheet.
 
@@ -388,7 +389,7 @@ article pre {
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 The scope is intentionally limited to practical CSS literacy for the continuing Hugo website. Readers make three guided changes in one file: add the footer-note rule, set the body font size, and adjust heading spacing. Existing responsive and accessibility-related rules are explained at recognition level and retained. Do not expand this into a survey of CSS features or add a framework installation exercise.
 

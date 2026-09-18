@@ -1,12 +1,13 @@
 ---
-title: "Chapter 13 — Create and Maintain Content with AI Agents"
+title: "Create and Maintain Content with AI Agents"
 weight: 13
+book_number: 13
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Not yet validated: no Hugo build check, agent session, browser review, or beginner trial has been performed for this chapter.*
 
 In Chapter 8, you gave an agent a small, self-contained job: three bullets in one file. You could read the whole result in a minute. Real content work is larger than that, and its mistakes are harder to see.
@@ -260,14 +261,14 @@ assets/data/resource_links.json before editing.
 Task: Connect the new article to the rest of the site.
 Edit exactly these three files.
 
-1. content/articles/_index.md — add one bullet to the existing Start reading
+1. content/articles/_index.md: add one bullet to the existing Start reading
    list, in the same format as the existing bullet, linking to
    publishing-with-github-pages/ with a short explanation.
 
-2. content/_index.md — add one bullet to the existing Latest writing list,
+2. content/_index.md: add one bullet to the existing Latest writing list,
    in the same format as the existing bullet.
 
-3. assets/data/resource_links.json — add one record at the end of the array
+3. assets/data/resource_links.json: add one record at the end of the array
    for the GitHub publishing-source page cited in the new article. Use the
    five agreed keys: title, url, description, topics (an array of strings),
    and start_here (the Boolean false). The url is the complete HTTPS address.
@@ -471,7 +472,7 @@ a custom domain, so I cannot say anything useful about either.
 
 ## Sources
 
-- [GitHub: configuring a publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) — Explains how a Pages site is told where to publish from, including the GitHub Actions route used here.
+- [GitHub: configuring a publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site): Explains how a Pages site is told where to publish from, including the GitHub Actions route used here.
 ````
 
 The matching directory record, added at the end of the array in `assets/data/resource_links.json`:
@@ -489,7 +490,7 @@ The matching directory record, added at the end of the array in `assets/data/res
 And the two added bullets, in their existing lists:
 
 ```markdown
-- [What I learned publishing with GitHub Pages](publishing-with-github-pages/) — Setting up a publishing source, and the first deployment that failed.
+- [What I learned publishing with GitHub Pages](publishing-with-github-pages/): Setting up a publishing source, and the first deployment that failed.
 ```
 
 ```markdown
@@ -498,13 +499,13 @@ And the two added bullets, in their existing lists:
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
-This is the second half of the agent thread opened in Chapter 8. That chapter taught a bounded single-file edit; this one teaches sourcing, decomposition, attribution, and claim checking on a contribution too large to verify at a glance. The three-request sequence — plan, draft, coordinated update — is the structural point, and the plan request is read-only so a structural objection costs one cheap round trip.
+This is the second half of the agent thread opened in Chapter 8. That chapter taught a bounded single-file edit; this one teaches sourcing, decomposition, attribution, and claim checking on a contribution too large to verify at a glance. The three-request sequence (plan, draft, coordinated update) is the structural point, and the plan request is read-only so a structural objection costs one cheap round trip.
 
-The supplied notes describe the reader's own Chapters 6 and 7 experience, deliberately: the reader is the authority on the source, so checking factual accuracy is genuinely possible rather than a performance. The two gap lines carry the main lesson and must survive editing. Section 13.3's article model completes the content-modelling thread Chapter 9 left open, and attribution sits in the page body because the starter renders no attribution field — reusing Chapter 9's lesson about front matter not being self-displaying.
+The supplied notes describe the reader's own Chapters 6 and 7 experience, deliberately: the reader is the authority on the source, so checking factual accuracy is genuinely possible rather than a performance. The two gap lines carry the main lesson and must survive editing. Section 13.3's article model completes the content-modelling thread Chapter 9 left open, and attribution sits in the page body because the starter renders no attribution field, reusing Chapter 9's lesson about front matter not being self-displaying.
 
-Section 13.7's unsupported sentence is the designed failure, mirroring Chapter 8's link mistake: both pass `hugo --minify --panicOnWarning`. The recovery differs on purpose — the new bundle is untracked, so `git restore` does not apply, which gives a concrete reason for committing a contribution once accepted. Check in the trial that beginners do not read this as a defect in Git.
+Section 13.7's unsupported sentence is the designed failure, mirroring Chapter 8's link mistake: both pass `hugo --minify --panicOnWarning`. The recovery differs on purpose: the new bundle is untracked, so `git restore` does not apply, which gives a concrete reason for committing a contribution once accepted. Check in the trial that beginners do not read this as a defect in Git.
 
 This is the longest chapter at roughly 4,830 words, though its reader-facing prose is mid-range; the difference is the three prompts, the supplied notes, and the comparison article, which are reference material and were not cut to reach a total. If the trial shows it running long, move the prompts into a companion command card as Chapter 6 does for Git.
 

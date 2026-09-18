@@ -1,12 +1,13 @@
 ---
-title: "Chapter 15 — Help Readers Find and Use Your Content"
+title: "Help Readers Find and Use Your Content"
 weight: 15
+book_number: 15
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *The browser script was checked in isolation. No Hugo build, template lookup, browser review, automated audit, or beginner trial yet.*
 
 Your notebook now has nine pages, a resource directory, a publishing workflow, and checks on every proposal. A visitor arriving at it has the navigation, and nothing else. They cannot search it, and a browser tab showing every page as part of the same long name does not help them keep their place.
@@ -398,11 +399,11 @@ An automated report and a passing check both examine stated rules on one version
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This chapter pays two debts: Chapter 9's note that the starter omits the description from the head, and Chapter 3's promise of the Hugo menu system. Section 15.5 deliberately declines the second, because a configuration table producing six links is harder to read than six links; Chapter 16's per-language navigation is the real trigger.
 
-The search design departs from the usual Hugo recipe on purpose. Rather than a JSON output format and a browser-side index fetch, the page list is rendered as HTML at build time and filtered in place. That reuses only the `range`, `with`, and context skills from Chapters 10 and 11, avoids output-format lookup rules, makes Section 15.7's no-JavaScript check a genuine success, and leaves the Section 15.6 failure with a page that still works. The cost — titles and descriptions only, on a page that grows with the site — is stated twice in the text. A JSON index belongs after Chapter 16 if a later edition wants one.
+The search design departs from the usual Hugo recipe on purpose. Rather than a JSON output format and a browser-side index fetch, the page list is rendered as HTML at build time and filtered in place. That reuses only the `range`, `with`, and context skills from Chapters 10 and 11, avoids output-format lookup rules, makes Section 15.7's no-JavaScript check a genuine success, and leaves the Section 15.6 failure with a page that still works. The cost (titles and descriptions only, on a page that grows with the site) is stated twice in the text. A JSON index belongs after Chapter 16 if a later edition wants one.
 
 Section 15.6 is the quietest designed failure in the book: no console error, no visual defect. The diagnostic route is the empty status paragraph, which is why the script sets that message last. Watch whether beginners find an absent error more unsettling than a crash; if so, make the guard log rather than removing it.
 

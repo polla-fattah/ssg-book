@@ -1,12 +1,13 @@
 ---
-title: "Chapter 12 — Build a Resource Directory with JSON"
+title: "Build a Resource Directory with JSON"
 weight: 12
+book_number: 12
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial, browser review, or deployment yet.*
 
 Your Resources page contains a small collection of links. Markdown handles that well. As the collection grows, however, you may want every entry to have the same information: a title, an address, a short explanation, and a few topics.
@@ -462,7 +463,7 @@ Chapter 13 turns supplied source material into linked pages. The field agreement
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 JSON is the hands-on focus. YAML and TOML are recognition comparisons building on earlier chapters; CSV introduces conversion decisions, and XML is brief orientation. The chapter does not add a database, API retrieval, a browser-side loader, a complete schema validator, or automated format conversion.
 

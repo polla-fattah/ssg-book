@@ -1,12 +1,13 @@
 ---
-title: "Chapter 7 — Publish Your Hugo Site with GitHub Pages"
+title: "Publish Your Hugo Site with GitHub Pages"
 weight: 7
+book_number: 7
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Local checks only, with Hugo 0.150.0 on Linux. No live GitHub deployment, browser verification, or beginner trial yet.*
 
 Your website now has content, a readable layout, and a local Git history. This chapter gives it an address other people can visit.
@@ -374,7 +375,7 @@ Custom domains, DNS, alternative hosts, detailed workflow security, and collabor
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 The core route is one personal public project repository, HTTPS authentication through GitHub CLI, the existing `main` branch, and a GitHub Actions deployment to Pages. It does not create a remote repository or publish anything on the author's behalf. Readers perform those account-specific actions themselves.
 

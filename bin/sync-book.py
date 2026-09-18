@@ -4,10 +4,11 @@
 The manuscript stays the single source. This script writes two things:
 
 - content/book/: one page per chapter. The manuscript chapters open with a
-  "# Chapter N — Title" heading and carry no front matter. The Book shell
-  needs a title and an order, and renders the title as the page heading
-  itself, so the first heading is lifted into front matter and a weight is
-  added. Everything below the heading is copied unchanged.
+  "# Title" heading and carry no front matter. The Book shell renders the
+  title as the page heading itself, so the first heading is lifted into
+  front matter. The chapter number comes from the filename (Chapter_NN_...)
+  and becomes the page's weight and its book_number, which the theme shows
+  beside the title. Everything below the heading is copied unchanged.
 - content/topics/_index.md: the learning topics from learning-topics.md, with
   each numbered topic as a heading carrying a stable {#topic-N} anchor that
   the home page links to. The manuscript's planning preface is not copied.
@@ -33,7 +34,7 @@ BOOK = ROOT / "content" / "book"
 TOPICS = ROOT / "content" / "topics" / "_index.md"
 TOPICS_SOURCE = "learning-topics.md"
 CHAPTER = re.compile(r"^Chapter_(\d{2})_.+\.md$")
-HEADING = re.compile(r"^# (Chapter (\d+) .+)$")
+HEADING = re.compile(r"^# (.+)$")
 TOPIC = re.compile(r"^(\d+)\. \*\*(.+?)\*\*\s*$")
 BULLET = re.compile(r"^\s+\*\s+(.+)$")
 
@@ -61,12 +62,13 @@ def render_chapter(source: Path) -> str:
     lines = source.read_text(encoding="utf-8").split("\n")
     match = HEADING.match(lines[0]) if lines else None
     if not match:
-        raise SystemExit(f"{source.name}: first line is not a '# Chapter N ...' heading")
-    title, number = match.group(1), int(match.group(2))
+        raise SystemExit(f"{source.name}: first line is not a '# Title' heading")
+    title = match.group(1).strip()
+    number = int(CHAPTER.match(source.name).group(1))
     body = lines[1:]
     while body and body[0].strip() == "":
         body.pop(0)
-    front = f"---\ntitle: {yaml_string(title)}\nweight: {number}\n---\n\n"
+    front = f"---\ntitle: {yaml_string(title)}\nweight: {number}\nbook_number: {number}\n---\n\n"
     return front + "\n".join(body)
 
 

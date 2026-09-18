@@ -1,12 +1,13 @@
 ---
-title: "Chapter 9 — Give Your Hugo Content a Consistent Structure"
+title: "Give Your Hugo Content a Consistent Structure"
 weight: 9
+book_number: 9
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial, browser review, or deployment yet.*
 
 Your website has one project page. Adding a second is easy: create another Markdown file and begin writing. After several projects, however, you might notice that one page explains its purpose, another lists tools, and a third never says whether the work has started.
@@ -344,7 +345,7 @@ Reopen the page and check that it is available without draft inclusion. Restarti
 Now open `content/projects/_index.md`. Preserve its introduction and existing project link. Under `## Current work`, add:
 
 ```markdown
-- [My website reading list](reading-list/) — A planned collection of resources for learning website publishing.
+- [My website reading list](reading-list/): A planned collection of resources for learning website publishing.
 ```
 
 Visit Projects through the navigation. Both project links should work, and each project should link back to Projects. The list is still manual: creating a page or adding metadata does not insert a link into it. Chapter 10 will introduce the template tools needed to automate a list.
@@ -479,7 +480,7 @@ Chapter 10 will use these consistent fields in Hugo templates. We will begin wit
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This chapter limits content modelling to the existing Projects family. It introduces essential YAML shapes, custom parameters, a plain archetype, and the distinction between page readiness and project progress. It deliberately defers taxonomies, cascading metadata, URL overrides, computed archetype values, and automated model validation. JSON and the wider format comparison remain in Chapter 12.
 

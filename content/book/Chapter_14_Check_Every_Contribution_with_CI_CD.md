@@ -1,12 +1,13 @@
 ---
-title: "Chapter 14 — Check Every Contribution with CI/CD"
+title: "Check Every Contribution with CI/CD"
 weight: 14
+book_number: 14
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *The three shell rule checks were verified against a reconstructed content fixture. No Hugo build, GitHub Actions run, pull request, ruleset configuration, or beginner trial yet.*
 
 Chapter 6 deferred branching until there was a concrete reason to use it. This is that reason. Every change you have made since then went straight onto `main`, and every push to `main` publishes.
@@ -387,7 +388,7 @@ Run the local checks from Section 14.3 before each push. Open, read, and merge t
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This chapter cashes the promise Chapter 6 made when it deferred branching, and it is the first place a branch has a purpose the reader can feel. Preserve that ordering; branching taught earlier would have been vocabulary without a use.
 

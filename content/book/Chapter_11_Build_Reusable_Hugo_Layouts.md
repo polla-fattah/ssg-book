@@ -1,12 +1,13 @@
 ---
-title: "Chapter 11 — Build Reusable Hugo Layouts"
+title: "Build Reusable Hugo Layouts"
 weight: 11
+book_number: 11
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial, browser review, or deployment yet.*
 
 Your shared layout now does several jobs. It creates the HTML document, displays navigation and a footer, presents page metadata, and generates the Projects list. It works, but finding the right place for the next change takes more care.
@@ -435,7 +436,7 @@ Chapter 12 will use structured data to build a small resource directory. These s
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This chapter introduces partial calls, explicit context, a shared base, named blocks and definitions, and one specific section template. It retains Chapter 10's project-list status variation. The only planned visible addition is the independent Projects introduction; the earlier refactoring steps should preserve rendered structure and meaningful text.
 

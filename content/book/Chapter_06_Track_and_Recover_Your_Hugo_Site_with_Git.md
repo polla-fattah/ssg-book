@@ -1,12 +1,13 @@
 ---
-title: "Chapter 6 — Track and Recover Your Hugo Site with Git"
+title: "Track and Recover Your Hugo Site with Git"
 weight: 6
+book_number: 6
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 and Git 2.51.1 on Linux. No beginner trial or browser review yet.*
 
 In the previous chapters, you kept copies of the project before continuing. Those copies helped you recover, but comparing them becomes awkward. Which one contains the footer improvement? What changed in the stylesheet? Can you recover a file without replacing the whole site?
@@ -296,7 +297,7 @@ You can inspect the latest committed change to the article with:
 git diff HEAD~1 HEAD -- content/articles/first-learning-note/index.md
 ```
 
-Here, `HEAD` identifies the current commit and `HEAD~1` its first parent—the preceding checkpoint in our simple history. This comparison should show the checklist addition. It requires the two commits we have just made.
+Here, `HEAD` identifies the current commit and `HEAD~1` its first parent, the preceding checkpoint in our simple history. This comparison should show the checklist addition. It requires the two commits we have just made.
 
 Your record starts when you begin committing. Git has not reconstructed the individual steps from Chapters 1–5; they are represented together by the baseline commit. It also cannot reliably recover arbitrary edits that were never recorded.
 
@@ -367,7 +368,7 @@ Run commands from the repository root. Replace example paths where necessary.
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 This chapter retains the limited practical scope requested for the book. It uses the continuing Hugo project, introduces local Git without requiring GitHub, and records source files rather than generated output. It deliberately postpones branching exercises, merge conflicts, rebasing, and shared-history recovery.
 

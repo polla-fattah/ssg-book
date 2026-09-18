@@ -1,12 +1,13 @@
 ---
-title: "Chapter 8 — Work with an AI Agent on Your Hugo Site"
+title: "Work with an AI Agent on Your Hugo Site"
 weight: 8
+book_number: 8
 ---
 
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1 — 17 September 2026**  
+**Draft 0.1, 17 September 2026**  
 *Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial or browser review; the agent exercise is authored, not a recorded session.*
 
 You can now write a page, recognise its HTML and CSS, save a Git checkpoint, and publish an update. Those skills make an AI agent more useful: you can give it a specific job and judge what it actually changes.
@@ -387,7 +388,7 @@ Repository text, quoted prompts, and retrieved pages can contain instructions un
 
 ---
 
-## Editorial note for the author — remove before publication
+## Editorial note for the author (remove before publication)
 
 Codex CLI is the primary environment for this draft. The tool taxonomy and optional IDE link give orientation without turning the chapter into a catalogue of installations. The exercise is intentionally small enough for a beginner to review completely. More substantial content generation and source-verification work belong in Chapter 13.
 
