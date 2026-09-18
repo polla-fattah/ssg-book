@@ -29,6 +29,58 @@
   <img src="https://raw.githubusercontent.com/pgsty/oink/main/images/screenshot.png" alt="OINK documentation landing page in dark mode">
 </a>
 
+## Static Site Generators in the Age of AI
+
+This repository contains the companion website for *Static Site Generators in
+the Age of AI: Building and Maintaining Content with AI Agents*. The book is a
+practical, nineteen-chapter journey through Hugo, Markdown, HTML, CSS, Git,
+GitHub Pages, templates, structured data, CI/CD, accessibility, multilingual
+publishing, and responsible AI-assisted maintenance.
+
+The chapters are published as a Hugo Book section under
+[`content/book/`](content/book/). The sequence follows one continuing project:
+
+1. Write and preview a first Hugo website.
+2. Organise, style, version, and publish it.
+3. Work with an AI agent while reviewing every change.
+4. Add structured content, templates, reusable layouts, and a JSON directory.
+5. Improve discovery, languages, interaction, testing, and long-term recovery.
+
+### Run the book locally
+
+This repository uses the OINK theme directly. Install Hugo Extended 0.160.1 or
+newer, then run:
+
+```sh
+git clone https://github.com/polla-fattah/ssg-book.git
+cd ssg-book
+hugo server
+```
+
+Open <http://localhost:1313/> in a browser. The book is available at
+<http://localhost:1313/book/>.
+
+### Repository layout
+
+| Path | Purpose |
+| --- | --- |
+| [`content/book/`](content/book/) | Published book chapters and Book-section index |
+| [`ATTRIBUTION.md`](ATTRIBUTION.md) | OINK attribution and licensing context |
+| [`hugo.yaml`](hugo.yaml) | Hugo and OINK configuration |
+| [`layouts/`](layouts/) | OINK Book, Docs, and shared templates |
+
+The source planning material lives in the parent learning workspace. This
+repository is the publishable website and keeps the book content separate from
+the theme implementation.
+
+## Built with OINK
+
+OINK is the Hugo theme that supplies the Book shell, navigation, typography,
+search, responsive layout, print output, and content components used here. This
+repository is a fork of [pgsty/oink](https://github.com/pgsty/oink); the theme's
+license and notices remain in [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).
+See [`ATTRIBUTION.md`](ATTRIBUTION.md) for the full attribution statement.
+
 OINK turns native Markdown into a complete knowledge-publishing site with one
 Hugo Extended build. Its fonts, icons, search, diagrams, and feature runtimes
 ship locally and load only where they are used. Consumer sites need no Node.js,
