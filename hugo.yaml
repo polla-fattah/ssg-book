@@ -9,6 +9,35 @@
 title: Static Site Generators in the Age of AI
 locale: en
 
+# Top navigation. Each pageRef must point at an existing page, or the strict
+# build fails; Slides and Playground have placeholder pages until they exist.
+menus:
+  main:
+    - identifier: book
+      name: Book
+      pageRef: /book
+      weight: 10
+      params:
+        icon: fa-solid fa-book
+    - identifier: slides
+      name: Lecture slides
+      pageRef: /slides
+      weight: 20
+      params:
+        icon: fa-solid fa-person-chalkboard
+    - identifier: playground
+      name: Playground
+      pageRef: /playground
+      weight: 30
+      params:
+        icon: fa-solid fa-flask
+    - identifier: posts
+      name: Posts
+      pageRef: /posts
+      weight: 40
+      params:
+        icon: fa-solid fa-newspaper
+
 params:
   # Highlight code with Chroma class names so it follows the theme's light/dark
   # palettes. Hugo ignores `markup` set by a theme, so the theme applies this

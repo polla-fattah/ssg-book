@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
-"""Generate content/book/ from the book manuscript.
+"""Generate the book pages from the book manuscript.
 
-The manuscript chapters are plain Markdown that open with a
-"# Chapter N — Title" heading and carry no front matter. The Book shell needs
-a title and an order, and renders the title as the page heading itself, so
-this script lifts that first heading into front matter and adds a weight.
-Everything below the heading is copied unchanged.
+The manuscript stays the single source. This script writes two things:
 
-The manuscript stays the single source. Edit it there, then run:
+- content/book/: one page per chapter. The manuscript chapters open with a
+  "# Chapter N — Title" heading and carry no front matter. The Book shell
+  needs a title and an order, and renders the title as the page heading
+  itself, so the first heading is lifted into front matter and a weight is
+  added. Everything below the heading is copied unchanged.
+- content/topics/_index.md: the learning topics from learning-topics.md, with
+  each numbered topic as a heading carrying a stable {#topic-N} anchor that
+  the home page links to. The manuscript's planning preface is not copied.
 
-    python3 bin/sync-book.py            # write content/book/
-    python3 bin/sync-book.py --check    # exit 1 if content/book/ is stale
+Edit the manuscript, then run:
+
+    python3 bin/sync-book.py            # write the generated pages
+    python3 bin/sync-book.py --check    # exit 1 if any generated page is stale
 """
 
 from __future__ import annotations
@@ -24,12 +29,35 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = ROOT.parent / "Chapters and plan"
-DEST = ROOT / "content" / "book"
+BOOK = ROOT / "content" / "book"
+TOPICS = ROOT / "content" / "topics" / "_index.md"
+TOPICS_SOURCE = "learning-topics.md"
 CHAPTER = re.compile(r"^Chapter_(\d{2})_.+\.md$")
 HEADING = re.compile(r"^# (Chapter (\d+) .+)$")
+TOPIC = re.compile(r"^(\d+)\. \*\*(.+?)\*\*\s*$")
+BULLET = re.compile(r"^\s+\*\s+(.+)$")
+
+TOPICS_FRONT = """---
+title: "Learning topics"
+description: "The thirty-three topics the book teaches, from how websites work to long-term maintenance."
+type: docs
+---
+
+These are the topics the book covers. They are not the chapter order: several
+chapters touch each topic, and some topics are practised hands-on while others
+are explained just enough for you to make informed decisions. The
+[learning paths](../paths/) suggest where to start, depending on what you
+already know.
+
+"""
 
 
-def render(source: Path) -> str:
+def yaml_string(text: str) -> str:
+    # json.dumps yields a valid YAML double-quoted string and keeps the em dash.
+    return json.dumps(text, ensure_ascii=False)
+
+
+def render_chapter(source: Path) -> str:
     lines = source.read_text(encoding="utf-8").split("\n")
     match = HEADING.match(lines[0]) if lines else None
     if not match:
@@ -38,9 +66,29 @@ def render(source: Path) -> str:
     body = lines[1:]
     while body and body[0].strip() == "":
         body.pop(0)
-    # json.dumps yields a valid YAML double-quoted string and keeps the em dash.
-    front = f'---\ntitle: {json.dumps(title, ensure_ascii=False)}\nweight: {number}\n---\n\n'
+    front = f"---\ntitle: {yaml_string(title)}\nweight: {number}\n---\n\n"
     return front + "\n".join(body)
+
+
+def render_topics(source: Path) -> str:
+    out: list[str] = []
+    started = False
+    for line in source.read_text(encoding="utf-8").split("\n"):
+        topic = TOPIC.match(line)
+        if topic:
+            started = True
+            number, title = topic.group(1), topic.group(2)
+            if out:
+                out.append("")
+            out.append(f"## {number}. {title} {{#topic-{number}}}")
+            out.append("")
+            continue
+        bullet = BULLET.match(line)
+        if started and bullet:
+            out.append(f"- {bullet.group(1)}")
+    if not started:
+        raise SystemExit(f"{source.name}: no numbered '1. **Topic**' lines found")
+    return TOPICS_FRONT + "\n".join(out) + "\n"
 
 
 def main() -> int:
@@ -55,33 +103,38 @@ def main() -> int:
         print(f"manuscript folder not found: {args.source}", file=sys.stderr)
         return 2
 
-    sources = sorted(p for p in args.source.iterdir() if CHAPTER.match(p.name))
-    if not sources:
+    chapters = sorted(p for p in args.source.iterdir() if CHAPTER.match(p.name))
+    if not chapters:
         print(f"no Chapter_NN_*.md files in {args.source}", file=sys.stderr)
         return 2
+    topics_source = args.source / TOPICS_SOURCE
+    if not topics_source.is_file():
+        print(f"{TOPICS_SOURCE} not found in {args.source}", file=sys.stderr)
+        return 2
 
-    wanted = {p.name: render(p) for p in sources}
-    existing = {p.name for p in DEST.glob("Chapter_*.md")}
+    wanted = {BOOK / p.name: render_chapter(p) for p in chapters}
+    wanted[TOPICS] = render_topics(topics_source)
+    removed = sorted(set(BOOK.glob("Chapter_*.md")) - wanted.keys())
     stale = []
 
-    for name, text in wanted.items():
-        target = DEST / name
+    for target, text in wanted.items():
         current = target.read_text(encoding="utf-8") if target.exists() else None
         if current != text:
-            stale.append(name)
+            stale.append(target)
             if not args.check:
+                target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_text(text, encoding="utf-8", newline="\n")
 
-    removed = sorted(existing - wanted.keys())
-    for name in removed:
-        stale.append(name)
+    for target in removed:
+        stale.append(target)
         if not args.check:
-            (DEST / name).unlink()
+            target.unlink()
 
     verb = "stale" if args.check else "updated"
-    for name in stale:
-        print(f"{verb}: {name}" + (" (no longer in the manuscript)" if name in removed else ""))
-    print(f"{len(wanted)} chapters, {len(stale)} {verb}")
+    for target in stale:
+        note = " (no longer in the manuscript)" if target in removed else ""
+        print(f"{verb}: {target.relative_to(ROOT).as_posix()}{note}")
+    print(f"{len(chapters)} chapters and the topics page, {len(stale)} {verb}")
     return 1 if args.check and stale else 0
 
 
