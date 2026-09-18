@@ -1,4 +1,6 @@
 {{ $page := .Page -}}
+{{/* Book chapters show their book_number before the title, as the sidebar
+     and print views do. */ -}}
 {{/* data/docs_nav.json is the ordering authority wherever it declares a
      section, the same one the sidebar and the pager read; a section index that
      walked the content tree instead would list the same children in a
@@ -41,7 +43,7 @@
         <ul>
             {{ range $pages -}}
                 {{ $manualLink := cond (isset .Params "manual_link") .Params.manual_link ( cond (isset .Params "manual_link_relref") (relref . .Params.manual_link_relref) .RelPermalink) }}
-                <li><a href="{{ $manualLink }}"{{ with .Params.manual_link_title }} title="{{ . }}"{{ end }}{{ with .Params.manual_link_target }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{- .Title -}}</a></li>
+                <li><a href="{{ $manualLink }}"{{ with .Params.manual_link_title }} title="{{ . }}"{{ end }}{{ with .Params.manual_link_target }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{- with .Params.book_number }}<span class="td-book-number">{{ . }}</span> {{ end -}}{{- .Title -}}</a></li>
             {{ end -}}
         </ul>
     {{ else if eq $mode "cards" -}}
@@ -51,7 +53,7 @@
                 <div class="td-content-card__body">
                     <div class="td-content-card__head">
                         {{- with .Params.icon }}<i class="{{ . }} td-content-card__icon" aria-hidden="true"></i>{{ end -}}
-                        <a class="td-content-card__title" href="{{ $manualLink }}"{{ with .Params.manual_link_title }} title="{{ . }}"{{ end }}{{ with .Params.manual_link_target }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{ .LinkTitle | default .Title }}</a>
+                        <a class="td-content-card__title" href="{{ $manualLink }}"{{ with .Params.manual_link_title }} title="{{ . }}"{{ end }}{{ with .Params.manual_link_target }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{- with .Params.book_number }}<span class="td-book-number">{{ . }}</span> {{ end -}}{{ .LinkTitle | default .Title }}</a>
                     </div>
                     {{- with .Description }}<p class="td-content-card__description">{{ . | markdownify }}</p>{{ end -}}
                 </div>
@@ -63,7 +65,7 @@
             {{ $manualLink := cond (isset .Params "manual_link") .Params.manual_link ( cond (isset .Params "manual_link_relref") (relref . .Params.manual_link_relref) .RelPermalink) -}}
             <div class="td-section-index__entry">
                 <h2 class="h5">
-                    <a href="{{ $manualLink }}"{{ with .Params.manual_link_title }} title="{{ . }}"{{ end }}{{ with .Params.manual_link_target }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{- .Title -}}</a>
+                    <a href="{{ $manualLink }}"{{ with .Params.manual_link_title }} title="{{ . }}"{{ end }}{{ with .Params.manual_link_target }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{- with .Params.book_number }}<span class="td-book-number">{{ . }}</span> {{ end -}}{{- .Title -}}</a>
                 </h2>
                 <p>{{ .Description | markdownify -}}</p>
             </div>
