@@ -79,29 +79,29 @@ steps:
 paths:
   eyebrow: Learning paths
   title: Start where you are
-  desc: Every path builds the same website. They differ in where you spend your time.
+  desc: Four ways through the book. They differ in where you start and where you spend your time.
   columns: 4
   link_label: See the path
   items:
-    - name: New to building websites
+    - name: The complete path
       icon: fa-solid fa-seedling
-      meta: Beginner
-      desc: Chapters 1 to 7 in order, every exercise. Your site is published by the end of Chapter 7.
+      meta: No experience needed
+      desc: All nineteen chapters in order. Your site is published by Chapter 7.
       url: paths/#new
-    - name: Some web experience
+    - name: Web-literate
       icon: fa-solid fa-code
-      meta: HTML and CSS, no Git
-      desc: Move quickly through the setup and markup chapters; slow down for Git and publishing.
+      meta: HTML, CSS, JSON, YAML
+      desc: Skim the markup and format explanations; slow down for Hugo, Git, publishing, and agents.
       url: paths/#some-experience
-    - name: Developers
+    - name: Software engineers
       icon: fa-solid fa-terminal
-      meta: Git and terminal daily
-      desc: Build the site briskly, then focus on agents, templates, data, and checks.
+      meta: Hugo and CI/CD
+      desc: A brisk setup, then Hugo's templates and data, the Pages pipeline, and checks on every change.
       url: paths/#developers
-    - name: Teachers and teams
+    - name: Maintainers and teams
       icon: fa-solid fa-people-group
-      meta: Shared or taught sites
-      desc: Review workflows, required checks, second languages, maintenance, and ownership.
+      meta: An existing website
+      desc: Bring AI agents into a site you already run, with review, required checks, and maintenance.
       url: paths/#teams
 
 timeline:
