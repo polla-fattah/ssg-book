@@ -69,16 +69,12 @@ steps:
   items:
     - title: See the result first
       desc: Each chapter opens with what you will have at the end and what you will be able to do.
-      icon: fa-solid fa-eye
     - title: Make one small change early
       desc: A working edit comes before the explanation, so every idea has something real to attach to.
-      icon: fa-solid fa-pen
     - title: Break something on purpose
       desc: A deliberate mistake, how to recognise it, and how to recover. The build passing is never the whole check.
-      icon: fa-solid fa-bug
     - title: Try it your way, then save
       desc: An independent variation shows you understood the idea. A checklist and a saved checkpoint close the chapter.
-      icon: fa-solid fa-floppy-disk
 
 paths:
   eyebrow: Learning paths
