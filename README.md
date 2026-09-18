@@ -36,13 +36,35 @@ Open <http://localhost:1313/> in a browser. The book is available at
 
 ## Repository Structure
 
-- `content/book/` contains the published chapters.
+- `content/book/` contains the published chapters. They are generated; do not
+  edit them here.
 - `content/book/_index.md` defines the Book section.
+- `data/home.yaml` defines the home page.
 - `hugo.yaml` contains the site configuration.
 - `layouts/` contains the templates used to render the website.
 - `ATTRIBUTION.md` records the project's licensing context.
 
 The planning material and chapter development notes live in the parent learning
 workspace. This repository contains the publishable website.
+
+## Update the Chapters
+
+The manuscript in the parent workspace's `Chapters and plan/` folder is the
+single source. After editing it, regenerate the website copies:
+
+```sh
+python3 bin/sync-book.py            # write content/book/
+python3 bin/sync-book.py --check    # exit 1 if content/book/ is out of date
+```
+
+The script adds each chapter's title and order as front matter and copies the
+rest of the chapter unchanged.
+
+## Publish
+
+Every push to `main` builds the site with Hugo 0.165.0 and deploys it to
+GitHub Pages through `.github/workflows/pages.yml`. The repository's Pages
+source must be set to **GitHub Actions**. The theme's own test suite,
+`.github/workflows/ci.yml`, runs only when started from the Actions tab.
 
 The website uses the OINK theme for Hugo.
