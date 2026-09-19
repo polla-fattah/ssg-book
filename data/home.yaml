@@ -25,12 +25,14 @@ hero:
   # Caps the title's size; below about 950px wide it scales with the window.
   title_size: 3.2rem
   subtitle: Building and Maintaining Content with AI Agents
-  # Drawn from "Chapters and plan/cover/hero.html" in the book workspace.
+  # The author's illustration with its black background removed; the full-size
+  # copy is "Chapters and plan/cover/hero.png" in the book workspace.
   image:
     src: images/hero-book.webp
     alt: >
-      Project files flow through a Hugo build into a published website, with an
-      AI agent proposing changes and a person reviewing them before they go live.
+      Source files and code snippets flow along connected lines into a published
+      website, with a page layout, a book chapter, and a branching Git history
+      beside it.
   # Text and illustration share the width equally, and the image may grow past
   # the theme's 480px default. It is left out on phones, where it would push
   # the text down.
