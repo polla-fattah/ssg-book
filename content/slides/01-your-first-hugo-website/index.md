@@ -80,18 +80,18 @@ Make a folder `my-knowledge-site`, open it in VS Code, and add four files:
 
 | File | Its job |
 | --- | --- |
-| `hugo.toml` | The site's basic settings |
-| `content/_index.md` | The home-page text |
+| `hugo.toml` | The site's basic settings (`locale = 'en'`) |
+| `content/_index.md` | The home-page text (leading `_` = section/home) |
 | `layouts/all.html` | The page structure (supplied) |
 | `static/css/site.css` | The appearance (supplied) |
 
-Watch the underscore in `_index.md`, and make sure no file ends in `.txt`.
+*(Copy starter code from the book or clone `ssg-playground` branch `chapter-01`)*
 
 ---
 
 ## Open your first preview
 
-1. In VS Code: **Terminal, New Terminal**
+1. In VS Code: **Terminal → New Terminal**
 2. Check you are in the folder with `hugo.toml`: `Get-Location` on Windows, `pwd` on macOS or Linux
 3. Start the preview:
 
@@ -99,7 +99,8 @@ Watch the underscore in `_index.md`, and make sure no file ends in `.txt`.
 hugo server
 ```
 
-4. Open the address it reports, normally `http://localhost:1313/`
+4. Open the address it reports, normally `http://localhost:1313/`  
+   *(Hint: Hold **Ctrl + Click** in the VS Code terminal)*
 
 ---
 
@@ -170,6 +171,7 @@ You changed the words without touching the layout. Edit the **source files**, ne
 ---
 
 ## Where AI agents will fit
+*(Concept preview — no AI tool setup needed today)*
 
 A bounded request names the file, the goal, and the limits:
 

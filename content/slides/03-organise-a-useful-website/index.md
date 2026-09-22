@@ -41,7 +41,7 @@ Every destination must contain something useful.
 
 ## Start from Chapter 2
 
-Continue in `my-knowledge-site`. Your article should be `draft: false`, with its screenshot beside it, and linked from the home page.
+Continue in `my-knowledge-site` (or checkout companion branch `chapter-02` in `ssg-playground`). Your article should be `draft: false`, with its screenshot beside it, and linked from the home page.
 
 Keep `my-knowledge-site-ch02-backup` outside the project, then start the **ordinary** preview:
 
@@ -283,11 +283,13 @@ The page **still exists**, at `/projects/learning-notebook-test/`. The links poi
 
 ## Rule out stale pages, then recover
 
-If the old page still appears, do not trust it. Restart with:
+If the old page still appears, hard refresh the browser (`Ctrl + Shift + R` or `Cmd + Shift + R`) to clear browser cache. If needed, restart Hugo preview:
 
 ```text
-hugo server --renderToMemory
+hugo server
 ```
+
+*(Note: In modern Hugo, the server already serves from memory by default).*
 
 Then recover:
 

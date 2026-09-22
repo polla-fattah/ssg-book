@@ -7,9 +7,6 @@ book_number: 6
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 and Git 2.51.1 on Linux. No beginner trial or browser review yet.*
-
 In the previous chapters, you kept copies of the project before continuing. Those copies helped you recover, but comparing them becomes awkward. Which one contains the footer improvement? What changed in the stylesheet? Can you recover a file without replacing the whole site?
 
 Git gives your project a history of recorded checkpoints. In this chapter, you will record your working Hugo site, save one useful content change, and recover from a deliberately poor styling change.
@@ -25,11 +22,11 @@ By the end, you should be able to:
 - Distinguish removing a change from the next commit from discarding a file edit.
 - Find recent checkpoints and restore a deliberately changed file.
 
-Start with the working Chapter 5 project and keep its existing backup. Save all open files. Stop the Hugo preview for the initial setup so that the terminal is available for the commands below.
+Start with the working Chapter 5 project and keep its existing backup (or switch to companion branch `chapter-05` in `ssg-playground`). Save all open files. Stop the Hugo preview for the initial setup so that the terminal is available for the commands below.
 
 ## 6.1 Prepare Git in the right folder
 
-Open a terminal in the project folder that contains `hugo.toml`, `content`, `layouts`, and `static`. In an editor with an integrated terminal, opening the project folder first usually makes this straightforward. Check the terminal's location; opening a file in the editor does not necessarily change it.
+Open a terminal in the project folder that contains `hugo.toml`, `content`, `layouts`, and `static`. In an editor with an integrated terminal, opening the project folder first usually makes this straightforward. Check the terminal's location; opening a file in the editor does not necessarily change it. (If you are following along in the `ssg-playground` companion repository, it is already a Git repository—you can simply switch between chapter branches without re-running `git init`).
 
 Run:
 
@@ -366,14 +363,3 @@ Run commands from the repository root. Replace example paths where necessary.
 | Unstage a tracked file while keeping its edit | `git restore --staged -- path/to/file` |
 | Discard a tracked file's unstaged edits | `git restore -- path/to/file` |
 
----
-
-## Editorial note for the author (remove before publication)
-
-This chapter retains the limited practical scope requested for the book. It uses the continuing Hugo project, introduces local Git without requiring GitHub, and records source files rather than generated output. It deliberately postpones branching exercises, merge conflicts, rebasing, and shared-history recovery.
-
-The initial setup assumes the book project is not already under Git. Existing repositories require retaining their history and inspecting their state. Identity is configured locally to avoid changing the reader's other projects. Recovery exercises use an already tracked file and begin from a clean checkpoint; do not remove those conditions when editing the text.
-
-Documentation was consulted on 17 September 2026. The command sequence was tested on Linux with Git 2.51.1 and Hugo 0.150.0 against a copy of the Chapter 5 project. Checks covered the initial repository and identity setup; the 12 intended source files; ignored generated output; preservation of the Resources page and article image; three commits; staged and unstaged comparisons; unstaging without losing the article edit; and both the ordinary CSS recovery and the documented accidentally-staged variation. The final Hugo build contained the new article section and left the working tree clean.
-
-These were command-line and generated-output checks. Browser rendering of the deliberately oversized text was not tested in this run. A beginner trial and installation checks on the supported operating systems remain necessary before publication.

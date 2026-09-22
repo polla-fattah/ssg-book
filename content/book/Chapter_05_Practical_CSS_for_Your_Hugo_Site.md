@@ -7,9 +7,6 @@ book_number: 5
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 on Linux. No beginner trial; responsive, zoom, and focus behaviour are not browser-tested yet.*
-
 Your notebook already has a readable layout. In Chapter 4, you inspected its HTML and added a footer note. Now you will give that note a style and make two small adjustments to the reading experience.
 
 The visible result is small but deliberate: the footer note sits below a thin rule in quieter text, body text reads a little larger, and your article's section headings have clearer space above them. Everything else should look as it did at the end of Chapter 4.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Recognise the existing rules that help the site fit smaller screens.
 - Diagnose a selector mistake and check the result across pages and screen widths.
 
-Start with the working Chapter 4 project. Its footer should contain the paragraph with `class="footer-note"`, and its skip link should be repaired. Keep your Chapter 4 backup outside the active project.
+Start with the working Chapter 4 project (or checkout companion branch `chapter-04` in `ssg-playground`). Its footer should contain the paragraph with `class="footer-note"`, and its skip link should be repaired. Keep your Chapter 4 backup outside the active project.
 
 The only source file we will change is `static/css/site.css`. No new software or account is required.
 
@@ -248,7 +245,7 @@ A **media query** applies rules when a condition, such as viewport width, is met
 
 ### Check the result at more than one size
 
-Check Home, your first article, and Resources. Narrow the browser window or use its responsive preview at about 360 CSS pixels wide, then try a wider view. Also increase browser zoom to 200% and check that you can still reach and read the content; return to your usual zoom afterwards.
+Check Home, your first article, and Resources. Narrow the browser window or use its responsive device preview (toggle with **Ctrl + Shift + M** on Windows/Linux or **Cmd + Shift + M** on macOS) at about 360 CSS pixels wide, then try a wider view. Also increase browser zoom to 200% and check that you can still reach and read the content; return to your usual zoom afterwards.
 
 Look for clipped words, links that overlap, distorted images, and page-wide sideways scrolling. Navigation wrapping is expected. A long code block scrolling within its own box is different from the entire page requiring horizontal scrolling.
 
@@ -284,7 +281,7 @@ Choose a heading gap that suits your article. Change only `h2`'s `margin-top` to
 
 Check the footer, headings, and navigation on the three pages used above. Then use Tab to move through links. Keep the existing visible focus outline and the working Skip to content link. The `a:focus-visible` rule helps keyboard users locate their current link; removing it for a cleaner screenshot would make the site harder to use. [MDN: :focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible)
 
-For this exercise, retain our text and background colours, and retain link underlines. Future palette changes should include a contrast check; visual preference alone does not establish readability.
+For this exercise, retain our text and background colours, and retain link underlines. Future palette changes should include a contrast check; visual preference alone does not establish readability. Standard accessibility guidelines (WCAG AA) require a contrast ratio of at least 4.5:1 for normal body text and 3:1 for large text. Modern browser developer tools display this ratio automatically in their color picker.
 
 When reviewing an agent's styling proposal, ask three questions: which selector changes, which pages it affects, and how the result behaves at a narrow width. For example, “Add space above article section headings by editing the existing `h2` rule in `static/css/site.css`; preserve heading levels and check the article on a narrow screen” is a bounded task you can assess.
 
@@ -387,14 +384,3 @@ article pre {
 }
 ```
 
----
-
-## Editorial note for the author (remove before publication)
-
-The scope is intentionally limited to practical CSS literacy for the continuing Hugo website. Readers make three guided changes in one file: add the footer-note rule, set the body font size, and adjust heading spacing. Existing responsive and accessibility-related rules are explained at recognition level and retained. Do not expand this into a survey of CSS features or add a framework installation exercise.
-
-The final stylesheet assumes the supplied starter and Chapter 2's image/code rules, plus Chapter 4's footer markup. Other themes need their own documented customisation path. Documentation was consulted on 17 September 2026.
-
-Validation: the Chapter 4 project was copied for testing and updated with the completed stylesheet. Hugo 0.150.0 on Linux built successfully with warnings treated as errors at both a domain root and a `/my-knowledge-site/` base path. The stylesheet references and footer class were checked on all seven authored pages, and the published CSS was verified against its source. The completed stylesheet was also compared with the earlier version to confirm that it contains only the three intended changes, apart from formatting.
-
-These checks establish build and file-path continuity, not visual correctness. A browser could not be provisioned in this environment, so responsive rendering, zoom, focus behaviour, and the visible effects of the exercises still require browser review. A representative beginner trial remains necessary before publication.

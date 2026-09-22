@@ -7,9 +7,6 @@ book_number: 8
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial or browser review; the agent exercise is authored, not a recorded session.*
-
 You can now write a page, recognise its HTML and CSS, save a Git checkpoint, and publish an update. Those skills make an AI agent more useful: you can give it a specific job and judge what it actually changes.
 
 Our first job is small. The Resources page already contains useful links. You will ask an agent to add a short section explaining how a reader might use them. The result should be easy to inspect: one new heading and three bullets in one Markdown file.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Review the changed files and rendered page independently of the agent's summary.
 - Keep an accepted change in Git and recover from an isolated mistake.
 
-Start from the working Chapter 7 project with a clean Git working tree. The chapter's local exercises also work if you have completed its source configuration but have not yet published. You need internet access and an account with access to Codex.
+Start from the working Chapter 7 project with a clean Git working tree (or switch to companion branch `chapter-07` in `ssg-playground`). The chapter's local exercises also work if you have completed its source configuration but have not yet published. You need internet access and an account with access to Codex.
 
 Check your account's current access and usage limits before starting. Signing in with ChatGPT uses the access available through that account or workspace; API-key sign-in uses separately billed API access. Installing a client does not provide unlimited model usage. We will use **Sign in with ChatGPT** and will not configure an API key in this exercise. [OpenAI: authentication](https://learn.chatgpt.com/docs/auth)
 
@@ -386,16 +383,3 @@ Chapter 9 returns to Hugo's content model so that later agent tasks have a clear
 
 Repository text, quoted prompts, and retrieved pages can contain instructions unrelated to your task. Treat such material as content to assess, not as authority to change credentials, publish, or expand the job. The reusable project guidance and the current task should remain explicit.
 
----
-
-## Editorial note for the author (remove before publication)
-
-Codex CLI is the primary environment for this draft. The tool taxonomy and optional IDE link give orientation without turning the chapter into a catalogue of installations. The exercise is intentionally small enough for a beginner to review completely. More substantial content generation and source-verification work belong in Chapter 13.
-
-Official documentation was consulted on 17 September 2026. Installers, account access, model availability, permissions, and interface labels need rechecking before publication. The book does not require a particular model name or claim unlimited access. The standalone installers shown are the documented OS-specific routes; the local validation environment may use a different installation route, which must be identified below.
-
-The comparison example was applied and checked in a focused local Hugo fixture using the earlier starter layout, navigation, original Resources text, and project-path configuration. Destination pages contained placeholder bodies; this was not a full replay of Chapters 1–7. With Hugo 0.150.0 on Linux, the build passed, generated internal link destinations resolved to existing pages under the project prefix, and the root instruction file produced no page. The deliberate root-relative link mistake still allowed a successful build; restoring the committed file repaired it and returned Git to a clean state. The example also met the three-bullet, 70-word limit.
-
-Codex CLI 0.154.0 was installed in a temporary Linux directory through npm for command-help checks. Its version, login command, sandbox modes, and approval flag were checked. No account sign-in, model request, interactive permission flow, or standalone OS installer was tested. The sample is authored, not a recorded agent response. Before publication, run the prompts with a beginner on the supported operating systems and verify the actual agent behaviour, installation, sign-in, and preview experience.
-
-Maintain the book's established teaching rhythm: a short explanation, one useful project change, inspection and recovery where relevant, and a completion checkpoint. Aim for approximately 3,200–4,000 words for chapters of comparable scope, allowing modest variation for supplied files. Introduce only the concepts needed for the exercise and explicitly defer advanced material.

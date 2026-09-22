@@ -7,9 +7,6 @@ book_number: 7
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Local checks only, with Hugo 0.150.0 on Linux. No live GitHub deployment, browser verification, or beginner trial yet.*
-
 Your website now has content, a readable layout, and a local Git history. This chapter gives it an address other people can visit.
 
 You will put the existing repository on GitHub, let GitHub Actions build it with Hugo, and publish the result through GitHub Pages. Then you will make one small update and follow it from your editor to the live page.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Find a deployment's status and verify the published pages, links, and image.
 - Publish a reviewed content update and recognise where to investigate a failure.
 
-Start with the completed Chapter 6 project. Its current branch should be `main`, its changes should be committed, and its local preview should work. The deliberate CSS mistake must already be repaired.
+Start with the completed Chapter 6 project (or switch to companion branch `chapter-06` in `ssg-playground`). Its current branch should be `main`, its changes should be committed, and its local preview should work. The deliberate CSS mistake must already be repaired.
 
 You need internet access, a GitHub account, and permission to create a repository in that account. We will also install GitHub CLI for browser-based sign-in from the terminal. The route below uses a **public repository**, GitHub-hosted standard runners, and the supplied `github.io` address. GitHub Pages is available for public repositories on GitHub Free; service limits still apply. No paid domain is needed for this exercise. [GitHub: about Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 
@@ -128,7 +125,7 @@ Open `hugo.toml`. Replace only its `baseURL` value, using your actual username a
 baseURL = 'https://YOUR-USERNAME.github.io/my-knowledge-site/'
 ```
 
-Keep the final slash. Preserve the existing language code and site title.
+Keep the final slash. Preserve the existing site title and language settings. (Note: in modern Hugo v0.158.0+, `languageCode` is deprecated in favor of `locale = 'en'`. If your build warns about `languageCode`, remove it and use `locale = 'en'` so that `--panicOnWarning` does not abort on the deprecation warning).
 
 The repository path matters. A site published below `/my-knowledge-site/` needs navigation and stylesheet addresses that include that prefix where appropriate. Our shared layout already uses Hugo's `relURL` function for those links. The article's relative image and content links were also designed for the existing folder structure.
 
@@ -373,16 +370,3 @@ Chapter 8 introduces the primary AI agent environment. With local preview, Git h
 
 Custom domains, DNS, alternative hosts, detailed workflow security, and collaboration policies are beyond this first publishing exercise. Keep the working setup small and introduce those topics when the project needs them.
 
----
-
-## Editorial note for the author (remove before publication)
-
-The core route is one personal public project repository, HTTPS authentication through GitHub CLI, the existing `main` branch, and a GitHub Actions deployment to Pages. It does not create a remote repository or publish anything on the author's behalf. Readers perform those account-specific actions themselves.
-
-The workflow intentionally matches the plain-CSS starter and Hugo 0.150.0 used for the earlier chapter validation. Action major versions were checked against their official repositories on 17 September 2026. Major-version tags can move; dependency pinning and update review should receive fuller treatment in Chapter 14. Recheck versions, account limits, interface labels, and the complete hosted workflow before publication.
-
-Local validation used a project reconstructed from the earlier chapters and Hugo 0.150.0 on Linux. The workflow YAML was parsed, its trigger, job dependency, permissions, and artifact path checked, and its install script checked for shell syntax. The official Hugo archive was downloaded and its extraction and executable-path setup verified. A production-style build passed checks for all seven authored pages and 71 local links, resources, and fragment targets beneath `/my-knowledge-site/`. A small image fixture represented the reader's screenshot for path checks.
-
-Initial and subsequent pushes were exercised against a temporary local bare Git repository, not GitHub. The publishing-checklist update appeared in the generated article. The deliberately malformed TOML failed to build; restoring the committed configuration repaired the build and left the working tree clean. All four action-version tags were confirmed against their official remote repositories.
-
-A real authenticated GitHub Actions/Pages deployment, browser verification of the hosted site, and a beginner trial remain publication gates. These local checks cannot verify account authentication, repository permissions, service behaviour, or the full hosted workflow. No public repository or website was created during drafting.

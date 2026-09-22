@@ -7,8 +7,8 @@ book_number: 1
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 on Linux. No beginner trial, browser review, or Windows/macOS installation walkthrough yet.*
+**Draft 0.2, September 2026**  
+*Checked with Hugo 0.150.0 through 0.166.0. Requires Hugo 0.146.0 or later for the template layout convention.*
 
 You have something worth sharing: notes from your work, an explanation you have written, a useful collection of resources, or a project you want others to understand. A website gives those materials a place where people can find and read them.
 
@@ -89,7 +89,7 @@ hugo version
 
 You should see a line identifying Hugo and its version. Extra information about the edition, operating system, or build is normal. Record the version you installed in a separate learning note; it will help if you need to troubleshoot later.
 
-This starter uses the template conventions introduced in **Hugo 0.146.0**. Its build and live-edit exercises were verified with **Hugo 0.150.0 on Linux**. Use version 0.146.0 or later; the documented lower bound is a compatibility starting point, not a claim that every eligible release has been tested with this draft. See the [template-system overview](https://gohugo.io/templates/new-templatesystem-overview/) for the relevant changes.
+This starter uses the template conventions introduced in **Hugo 0.146.0**. Its build and live-edit exercises were verified with **Hugo 0.150.0 through 0.166.0**. Use version 0.146.0 or later; older distribution packages (such as legacy packages from Debian/Ubuntu `apt`) do not support `all.html` and will fail to build. In Hugo 0.158.0 and later, site language configuration uses `locale` instead of `languageCode` to avoid deprecation warnings. See the [template-system overview](https://gohugo.io/templates/new-templatesystem-overview/) for the relevant changes.
 
 > **If the command is not recognised:** stop here and fix the installation. Reopen your terminal first. If that does not help, return to the installation guide for your operating system. Your website files are not the cause of an unrecognised `hugo` command.
 
@@ -110,7 +110,9 @@ In the editor's file explorer, create these folders and files. Paths in this tab
 
 The resulting paths are `hugo.toml`, `content/_index.md`, `layouts/all.html`, and `static/css/site.css`.
 
-Pay attention to the underscore in `_index.md`. Also make sure the files are not accidentally named `hugo.toml.txt` or `all.html.txt`. Creating them inside the code editor helps avoid hidden filename-extension problems.
+Pay attention to the underscore in `_index.md`. In Hugo, a leading underscore designates a section or branch bundle (such as the home page), whereas `index.md` without an underscore designates an individual standalone leaf article. Also make sure the files are not accidentally named `hugo.toml.txt` or `all.html.txt`. Creating them inside the code editor helps avoid hidden filename-extension problems.
+
+You can either create these four files by hand or obtain them ready-made from the companion starter repository (`ssg-playground`, branch `chapter-01`).
 
 Copy the contents from **Starter files** near the end of this chapter into the four matching files. Copy only what is inside each code block; do not include the backticks. Save every file.
 
@@ -139,7 +141,7 @@ Leave the terminal running. Read its output and find the local address, normally
 http://localhost:1313/
 ```
 
-Enter that address in your browser's address bar. If Hugo reports a different address or port, use the one it reports.
+Enter that address in your browser's address bar (or hold **Ctrl** and click the link directly in the VS Code terminal, or **Command** on macOS). If Hugo reports a different address or port, use the one it reports.
 
 You should see:
 
@@ -192,9 +194,9 @@ title: "Welcome to Sara's learning space"
 
 Save and inspect the page again.
 
-The lines between the two `---` markers form the **front matter**: a small block of information about the page. Here, its `title` supplies the large page heading. The writing below the second marker forms the page's main content.
+The lines between the two `---` markers form the **front matter** in **YAML** format: a small block of structured metadata about the page. Here, its `title` supplies the large page heading. The writing below the second marker forms the page's main content.
 
-You only need to recognise that distinction today. Chapter 2 develops Markdown, and a later chapter explains structured metadata in more detail.
+You only need to recognise that distinction today. Chapter 2 develops Markdown, and Chapter 9 explains structured metadata and configuration in detail.
 
 ## 1.6 Understand what changed
 
@@ -298,7 +300,7 @@ In Chapter 2, we will add a separate article and learn the Markdown needed to st
 | A configuration parsing error appears. | Compare `hugo.toml` with the supplied starter. Keep straight quotation marks, matching pairs, and the equals signs. |
 | A front-matter parsing error appears. | Check the two `---` markers and the matching quotation marks around the title in `content/_index.md`. |
 | The browser shows a connection error. | Check that `hugo server` is still running and that you entered its reported address, including `http://` and the port. |
-| The terminal reports that port 1313 is already in use. | Stop an earlier preview if you started one. Alternatively run `hugo server --port 1314` and open the address it reports. |
+| The terminal reports that port 1313 is already in use. | Stop an earlier preview with **Ctrl+C**. On Windows, closing a terminal tab without stopping Hugo may leave an orphaned `hugo.exe` running; terminate it in Task Manager or use `hugo server --port 1314`. |
 | The home page is missing or Hugo warns about a missing layout. | Check the spelling and placement of `layouts/all.html`, confirm that its code was saved, and check the Hugo version. |
 | The page appears without the supplied styling. | Check that `site.css` is inside `static/css`, and compare the stylesheet link in `layouts/all.html` with the starter. |
 | Your change does not appear. | Save the file, check for terminal errors, refresh the preview, and confirm that the editor and server are using the same project folder. |
@@ -314,11 +316,11 @@ These four blocks contain the complete starter for this draft. Copy each into th
 
 ```toml
 baseURL = 'https://example.org/'
-languageCode = 'en'
+locale = 'en'
 title = 'My Knowledge Notebook'
 ```
 
-`https://example.org/` is a placeholder, not your published website. Hugo's local server supplies the preview address. We will configure the real public address when publishing.
+`https://example.org/` is a placeholder, not your published website. In Hugo v0.158.0+, `locale = 'en'` is the standard language configuration (older Hugo versions used `languageCode = 'en'`). Hugo's local server supplies the preview address. We will configure the real public address when publishing.
 
 ### File 2: `content/_index.md`
 

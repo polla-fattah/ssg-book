@@ -43,7 +43,7 @@ Open `my-knowledge-site` from Chapter 1, stop any running preview with **Ctrl+C*
 hugo server -D
 ```
 
-`-D` includes pages marked as **drafts**. Keep this terminal running.
+`-D` (`--buildDrafts`) includes pages marked as **drafts**. Keep this terminal running.
 
 ---
 
@@ -54,6 +54,8 @@ Make this folder and file inside the project:
 ```text
 content/articles/first-learning-note/index.md
 ```
+
+*(Or switch to `ssg-playground` branch `chapter-02` where files are prepared)*
 
 Then open it in the browser, including the final slash:
 
@@ -196,6 +198,7 @@ Hugo gives the heading the identifier `my-next-step`. **Change the heading, and 
 ## Add your own screenshot
 
 1. Capture your home page and save it as a real **PNG**: `notebook-preview.png`
+   *(No spaces in filenames! Sample is included in `ssg-playground`)*
 2. Put it **next to** `index.md` in the article folder
 3. Add it to the article:
 
@@ -223,11 +226,11 @@ interests, and next steps](notebook-preview.png)
 Add these rules at the end of `static/css/site.css`:
 
 ```css
-article img { display: block; max-width: 100%; height: auto; }
-article pre { max-width: 100%; overflow-x: auto; }
+article img { display: block; max-width: 100%; height: auto; border-radius: 0.5rem; }
+article pre { max-width: 100%; overflow-x: auto; background: #eae8e1; padding: 0.75rem 1rem; border-radius: 0.5rem; }
 ```
 
-Large images now shrink to fit, and long code scrolls. Chapter 5 explains CSS.
+Large images shrink to fit, and long code blocks scroll with distinct styling.
 
 ---
 

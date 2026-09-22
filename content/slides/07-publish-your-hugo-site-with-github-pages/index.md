@@ -35,7 +35,7 @@ A supplied workflow, explained: no need to master Actions or YAML first.
 - **Find** a deployment's status and verify the published pages
 - **Publish** a reviewed update, and know where to look when it fails
 
-Start from Chapter 6: on `main`, everything committed, the preview working.
+Start from Chapter 6 (or companion branch `chapter-06` in `ssg-playground`): on `main`, everything committed, the preview working.
 
 ---
 

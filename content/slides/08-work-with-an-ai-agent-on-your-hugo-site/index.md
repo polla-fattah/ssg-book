@@ -34,7 +34,7 @@ We use **Codex CLI**. The aim is a repeatable **method**, not a tour of every AI
 - **Review** the changed files and the page, not just the agent's summary
 - **Keep** an accepted change in Git, and recover from a mistake
 
-Start from Chapter 7 with a **clean** working tree.
+Start from Chapter 7 (or companion branch `chapter-07` in `ssg-playground`) with a **clean** working tree.
 
 ---
 

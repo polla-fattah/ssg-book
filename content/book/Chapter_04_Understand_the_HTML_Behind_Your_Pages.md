@@ -7,9 +7,6 @@ book_number: 4
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 on Linux. No beginner trial; the developer-tools and keyboard exercises are not browser-tested yet.*
-
 You have written articles, created sections, and changed the navigation of your website. Now we will look at what the browser receives when it displays those pages.
 
 The title on the screen is not simply large text. The navigation is not merely a row of coloured words. They have a structure that the browser can interpret. Understanding that structure will help you make deliberate changes, diagnose mistakes, and assess code suggested by an AI agent.
@@ -29,7 +26,7 @@ You do not need to memorise an HTML reference or learn JavaScript in this chapte
 
 ## 4.1 Inspect the article and change it in the browser only
 
-Start from the Chapter 3 project, with its seven authored pages and five navigation links. Keep your Chapter 3 backup outside the active project.
+Start from the Chapter 3 project, with its seven authored pages and five navigation links (or checkout companion branch `chapter-03` in `ssg-playground`). Keep your Chapter 3 backup outside the active project.
 
 In the project terminal, run:
 
@@ -43,7 +40,7 @@ Open the address reported by Hugo. Use Articles to reach your first learning not
 http://localhost:1313/articles/first-learning-note/
 ```
 
-In a desktop browser, right-click the article's main heading and choose **Inspect** or **Inspect Element**. If you are using a trackpad, use its context-menu gesture. Browser developer tools should open beside or below the page.
+In a desktop browser, right-click the article's main heading and choose **Inspect** or **Inspect Element**, or press **F12** (or **Ctrl + Shift + I** on Windows/Linux, **Cmd + Option + I** on macOS). If you are using a trackpad, use its context-menu gesture. Browser developer tools should open beside or below the page.
 
 Look for the **Elements** panel in Chromium-based browsers such as Chrome or Edge, or the **Inspector** in Firefox. The exact interface varies. You can also open developer tools through the browser's menu and use its element-picker tool to select the heading. [MDN: browser developer tools](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools)
 
@@ -436,14 +433,3 @@ Use this as a recovery reference for `layouts/all.html` if an edit went wrong. I
 </html>
 ```
 
----
-
-## Editorial note for the author (remove before publication)
-
-This chapter continues the seven-page project from Chapter 3. It prioritises inspection and source tracing over adding features. The only required persistent modification is the shared footer; the optional tables and form-control fragments are recognition examples, not project additions. The complete layout is a recovery reference, not a replacement for the earlier content files.
-
-Browser menu names vary, so provide screenshots for the final supported browser while retaining the Elements/Inspector terminology. DOM editing assumes ordinary developer tools without persistent overrides. Keyboard behaviour and accessibility need direct browser checks; a successful Hugo build does not validate them.
-
-Documentation was consulted on 17 September 2026. The project was reconstructed from Chapters 1–3 and built with Hugo 0.150.0 on Linux. All seven authored pages passed checks for local links, image and stylesheet references, fragment targets, unique identifiers, and the expected footer at both a domain root and a `/my-knowledge-site/` base path. The completed layout was checked to preserve the earlier layout outside the footer. The deliberately broken skip-link fragment still allowed a successful build, as described; the correct destination was then restored. A small image fixture stood in for the reader's screenshot during resource checks.
-
-An executable browser was unavailable for automated checks, so the developer-tools editing and keyboard-focus exercises have not been browser-tested in this draft. Those checks, a representative beginner trial, and cross-platform review remain necessary before publication. These structural checks are not a complete accessibility audit.

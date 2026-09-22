@@ -42,7 +42,7 @@ The only file you change today is `static/css/site.css`.
 
 ## Style the footer note
 
-Start `hugo server`, open `static/css/site.css`, and add at the **end**:
+Start `hugo server` (or checkout companion branch `chapter-04` in `ssg-playground`), open `static/css/site.css`, and add at the **end**:
 
 ```css
 .footer-note {
@@ -220,7 +220,7 @@ Chapter 2's image and code rules also stay: images shrink, long code scrolls in 
 
 On Home, your article, and Resources:
 
-1. Narrow the window, or use a responsive preview near **360 pixels**
+1. Narrow the window, or toggle responsive preview (**Ctrl + Shift + M** / **Cmd + Shift + M**) near **360 pixels**
 2. Try a wide view
 3. Zoom to **200%**: can you still read and reach everything?
 

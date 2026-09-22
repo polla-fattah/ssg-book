@@ -7,8 +7,8 @@ book_number: 2
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 (standard edition) on Linux. No beginner trial, browser review, or screenshot capture yet.*
+**Draft 0.2, September 2026**  
+*Checked with Hugo 0.150.0 through 0.166.0 (standard and extended editions).*
 
 In Chapter 1, you changed a home page. Now you will give your website something more substantial to read: its first article.
 
@@ -36,7 +36,7 @@ Open the original `my-knowledge-site` project from Chapter 1. Keep your personal
 | `layouts/all.html` | The supplied general layout |
 | `static/css/site.css` | The supplied styling |
 
-If you need to rebuild that starting point, Chapter 1 includes all four starter files. No new software, theme, or account is required here. This draft's exercises were checked with the same Hugo 0.150.0 Linux baseline used for Chapter 1.
+If you need to rebuild that starting point, Chapter 1 includes all four starter files, or you can switch to the `chapter-01` branch in the companion `ssg-playground` repository. No new software, theme, or account is required here.
 
 Open a terminal in the folder containing `hugo.toml`. If a preview server is still running, stop it with **Ctrl+C**. Then start it with one additional option:
 
@@ -44,7 +44,7 @@ Open a terminal in the folder containing `hugo.toml`. If a preview server is sti
 hugo server -D
 ```
 
-The `-D` option includes pages marked as drafts. Leave this terminal running and open the address it reports, normally `http://localhost:1313/`.
+The `-D` option (short for `--buildDrafts`) tells Hugo to include pages marked as drafts. Leave this terminal running and open the address it reports, normally `http://localhost:1313/`.
 
 You should see the home page you already know. We will keep using the same editor, project, and browser while adding one article.
 
@@ -221,15 +221,17 @@ Near the article's opening paragraph, add:
 [Jump to my next step](#my-next-step)
 ```
 
-With this starter, Hugo gives that heading the identifier `my-next-step`. Click the link and look at the browser address: it should end in `#my-next-step`. On a short page, the visual movement may be slight.
+With this starter, Hugo automatically gives that heading the identifier `my-next-step` by converting the text to lowercase, replacing spaces with hyphens, and removing punctuation. Click the link and look at the browser address: it should end in `#my-next-step`. On a short page, the visual movement may be slight.
 
-This also explains Chapter 1's navigation. Its My interests and Next steps links target specific home-page headings. Changing a heading can change its generated identifier, so check links that point to it.
+This also explains Chapter 1's navigation. Its My interests and Next steps links target specific home-page headings (`#my-interests` and `#next-steps`). Changing a heading can change its generated identifier, so check links that point to it.
 
 ## 2.6 Illustrate the article with your own screenshot
 
 Open your site's home page. Use your operating system's screen-capture tool to capture just the relevant page area. Save the image as a **PNG file** named `notebook-preview.png`.
 
-If the capture tool puts the image on the clipboard, paste it into a basic image editor and save or export it as PNG. Renaming a JPEG extension to `.png` does not convert its format. Use the tool's actual Save or Export option.
+> **Web asset best practice:** Never include spaces, uppercase letters, or special characters in web image filenames (use `notebook-preview.png`, avoid `My Screenshot.png`). Spaces in filenames become `%20` in URLs and lead to broken links.
+
+If the capture tool puts the image on the clipboard, paste it into a basic image editor and save or export it as PNG. Renaming a JPEG extension to `.png` does not convert its format. Use the tool's actual Save or Export option. (If using the companion `ssg-playground` repository on branch `chapter-02`, a sample image is already included beside the article).
 
 Place the file next to the article:
 
@@ -257,22 +259,27 @@ If you use another person's image in future, establish permission or an appropri
 
 ### Keep the image within the page
 
-Chapter 1's small stylesheet did not include image sizing. Open `static/css/site.css` and add these rules at the end, outside its existing braces:
+Chapter 1's small stylesheet did not include image sizing or code block styling. Open `static/css/site.css` and add these rules at the end, outside its existing braces:
 
 ```css
 article img {
   display: block;
   max-width: 100%;
   height: auto;
+  border-radius: 0.5rem;
+  margin-block: 1rem;
 }
 
 article pre {
   max-width: 100%;
   overflow-x: auto;
+  background: #eae8e1;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
 }
 ```
 
-Save and refresh the preview. The first rule lets large images shrink to the available width while preserving their proportions. The second lets long code samples scroll within their own area. Resize the browser to check the result. These are supplied styling adjustments; Chapter 5 will explain CSS properly.
+Save and refresh the preview. The first rule lets large images shrink to the available width while preserving their proportions. The second lets long code samples scroll within their own area with distinct background styling. Resize the browser to check the result. These are supplied styling adjustments; Chapter 5 will explain CSS properly.
 
 ## 2.7 Display a command without running it
 

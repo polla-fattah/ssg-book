@@ -39,13 +39,13 @@ No HTML reference to memorise, and no JavaScript.
 
 ## Inspect the article
 
-Start `hugo server` in your Chapter 3 project and open:
+Start `hugo server` in your Chapter 3 project (or checkout companion branch `chapter-03` in `ssg-playground`) and open:
 
 ```text
 http://localhost:1313/articles/first-learning-note/
 ```
 
-Right-click the main heading and choose **Inspect**. Look for **Elements** (Chrome, Edge) or **Inspector** (Firefox):
+Right-click the main heading and choose **Inspect** or press **F12** (**Ctrl + Shift + I** / **Cmd + Option + I**). Look for **Elements** (Chrome, Edge) or **Inspector** (Firefox):
 
 ```html
 <h1>My first learning note</h1>

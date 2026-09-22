@@ -40,7 +40,7 @@ Save all files and **stop** the Hugo preview before you start.
 
 ## Check Git, in the right folder
 
-Open a terminal in the folder with `hugo.toml`, then:
+Open a terminal in the folder with `hugo.toml` (or checkout companion branch `chapter-05` in `ssg-playground`), then:
 
 ```text
 git --version
@@ -48,7 +48,7 @@ git rev-parse --show-toplevel
 ```
 
 - No version? Install Git from **git-scm.com**, then reopen the terminal
-- `not a git repository` is **expected** here: nothing manages this folder yet
+- `not a git repository` is **expected** here: nothing manages this folder yet (playground users are already inside git)
 - A path instead? Git already manages it or a parent. **Do not** nest a new repository blindly
 
 ---
