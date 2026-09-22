@@ -7,9 +7,6 @@ book_number: 11
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial, browser review, or deployment yet.*
-
 Your shared layout now does several jobs. It creates the HTML document, displays navigation and a footer, presents page metadata, and generates the Projects list. It works, but finding the right place for the next change takes more care.
 
 We will give those jobs clearer homes. A base template will hold the common document structure. Small partial templates will hold reusable pieces. A Projects section template will decide where the project list belongs.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Give the Projects section its own layout while retaining shared page structure.
 - Check that reorganising templates has preserved content, links, and metadata.
 
-Start from the completed Chapter 10 checkpoint, including status labels in the automatic project list. Both projects should have `draft: false`, and Git should report a clean working tree. Use the same Hugo installation and stylesheet.
+Start from the completed Chapter 10 checkpoint, including status labels in the automatic project list. (If you are following along in the companion repository `ssg-playground`, make sure you are on branch `chapter-10` or check out the completed chapter on branch `chapter-11`.) Both projects should have `draft: false`, and Git should report a clean working tree. Use the same Hugo installation and stylesheet.
 
 This chapter uses the template paths introduced in Hugo 0.146.0, including `layouts/baseof.html` and `layouts/_partials/`. The examples are checked with Hugo 0.150.0. Older tutorials may show `_default` or an unprefixed `partials` directory; follow this book's paths consistently rather than combining arrangements. [Hugo: template-system changes](https://gohugo.io/templates/new-templatesystem-overview/)
 
@@ -434,16 +431,3 @@ Chapter 12 will use structured data to build a small resource directory. These s
 | A layout edit seems to have no effect. | Identify which template the affected page actually selects; Projects now has a specific one. |
 | An agent edits the old location. | Check the updated file map and name the intended file in the task. |
 
----
-
-## Editorial note for the author (remove before publication)
-
-This chapter introduces partial calls, explicit context, a shared base, named blocks and definitions, and one specific section template. It retains Chapter 10's project-list status variation. The only planned visible addition is the independent Projects introduction; the earlier refactoring steps should preserve rendered structure and meaningful text.
-
-The canonical checkpoint contains six templates and the revised agent file map. The Projects section template may also become relevant to nested sections under that path if the content structure later grows; the book currently keeps it shallow. Avoid presenting this example as a complete explanation of Hugo's lookup precedence. Advanced partial arguments, caching, template variables, shortcodes, and theme overrides remain outside this chapter's exercise.
-
-Official Hugo documentation was consulted on 17 September 2026. The exercises were checked with Hugo 0.150.0 on Linux against the Chapter 10 validation fixture, including its project-list status addition. Unrelated destination pages retained placeholder bodies; this was not a full reconstruction of every earlier content exercise.
-
-Generated HTML was compared across eight authored routes after footer extraction, metadata and list extraction, the base split, and section-template selection. Those steps preserved element structure, attributes, and meaningful text. Checks also covered the deliberately mismatched definition and repair, the independent sentence's scope, stylesheet and link paths at both the domain root and the GitHub project prefix, retained status labels, an empty tools list, the empty-project message, and a clean seven-file Git checkpoint.
-
-These were build and generated-HTML checks. Visual browser assessment, keyboard interaction, a representative beginner trial, and external deployment remain untested in this draft.

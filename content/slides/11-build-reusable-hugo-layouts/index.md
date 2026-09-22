@@ -34,7 +34,7 @@ One layout now does everything. It works, but every change needs care.
 - **Give** Projects its own layout, sharing the rest
 - **Check** that content, links, and metadata survived the move
 
-Start from Chapter 10, with status in the project list, and a **clean** tree.
+Start from Chapter 10, with status in the project list, and a **clean** tree (companion branch `chapter-10`).
 
 ---
 
