@@ -8,11 +8,9 @@
   {{- with index $data "text" }}{{ $description = printf "%v" . }}{{ end -}}
 {{- end -}}
 {{- $compact := cond (index . "compact") " td-landing-section__head--compact" "" -}}
-{{- if or (index $data "eyebrow") (index $data "title") $description -}}
+{{- if or (index $data "title") $description -}}
 <header class="td-landing-section__head{{ $compact }}">
-  {{- with index $data "eyebrow" }}
-  <p class="td-landing-section__eyebrow"><span>{{ partial "landing/markdown.html" (dict "page" $page "value" .) }}</span><i aria-hidden="true"></i></p>
-  {{- end }}
+  <p class="td-landing-section__eyebrow"><span>{{ partial "landing/markdown.html" (dict "page" $page "value" (index $data "eyebrow")) }}</span><i aria-hidden="true"></i></p>
   {{- with index $data "title" }}
   <h2 id="{{ $id }}-title">{{ partial "landing/markdown.html" (dict "page" $page "value" .) }}</h2>
   {{- end }}

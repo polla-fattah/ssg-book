@@ -57,7 +57,7 @@ hero:
       style: ghost
 
 metrics:
-  eyebrow: Count it yourself
+  eyebrow: 
   title: The book in four numbers
   desc: Each one is checkable against the chapters.
   columns: 4
@@ -88,9 +88,9 @@ steps:
       desc: An independent variation shows you understood the idea. A checklist and a saved checkpoint close the chapter.
 
 paths:
-  eyebrow: Learning paths
-  title: Start where you are
-  desc: Four ways through the book. They differ in where you start and where you spend your time.
+  eyebrow: 
+  title: Learning paths
+  desc: 
   columns: 4
   link_label: See the path
   items:
@@ -140,11 +140,9 @@ timeline:
       url: book/chapter_18_maintain_migrate_and_recover/
 
 topics:
-  eyebrow: Learning topics
-  title: Thirty-three topics, one continuing project
+  eyebrow: 
+  title: Learning topics
   text:
-    Some are practised hands-on; others are explained just enough for you to
-    make informed decisions. Each tile opens the topic on the full list.
   layout: grid
   columns: 3
   items:
@@ -183,9 +181,9 @@ topics:
     - { title: Applying the complete workflow,     icon: fa-solid fa-graduation-cap,       url: 'topics/#topic-33' }
 
 tools:
-  eyebrow: Tools
-  title: What you will use
-  desc: The main exercises use one tool for each job. Alternatives are mentioned where they matter.
+  eyebrow: 
+  title: What Tools you will use
+  desc: 
   columns: 3
   items:
     - { name: Hugo, desc: Builds the website, icon: fa-solid fa-bolt, url: 'https://gohugo.io/', external: true }
@@ -196,8 +194,8 @@ tools:
     - { name: Codex CLI, desc: The AI agent used in the exercises, icon: fa-solid fa-robot }
 
 faq:
-  eyebrow: FAQ
-  title: Before you start
+  eyebrow: 
+  title: FAQ
   items:
     - question: Who is this book for?
       answer: >
@@ -236,8 +234,8 @@ faq:
         course introduction, and a playground is in preparation.
 
 principles:
-  eyebrow: Principles
-  title: What the book is making the case for
+  eyebrow: 
+  title: Principles of SSG
   columns: 3
   items:
     - icon: fa-solid fa-file-lines

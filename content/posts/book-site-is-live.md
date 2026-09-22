@@ -1,7 +1,7 @@
 ---
 title: "The book's website is live"
 description: "All nineteen chapters are now readable online, with learning paths and the full list of topics."
-date: 2026-09-18
+date: 2026-09-11
 ---
 
 The website for *Static Site Generators in the Age of AI* is now online. It
