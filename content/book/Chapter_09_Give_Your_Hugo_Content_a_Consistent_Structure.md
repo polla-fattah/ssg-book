@@ -7,9 +7,6 @@ book_number: 9
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial, browser review, or deployment yet.*
-
 Your website has one project page. Adding a second is easy: create another Markdown file and begin writing. After several projects, however, you might notice that one page explains its purpose, another lists tools, and a third never says whether the work has started.
 
 A small shared structure makes those pages easier to write, compare, and maintain. It also gives an AI agent concrete requirements to follow. The structure should answer useful questions without making every page look like a long form.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Create a project page from an archetype and distinguish its source path from its title.
 - Preview a draft, review its information, and make it reachable from the Projects page.
 
-Start from the completed Chapter 8 project with a clean Git working tree. You need the same Hugo installation and editor; no new service or account is required. The agent review near the end is optional.
+Start from the completed Chapter 8 project with a clean Git working tree. (If you are following along in the companion repository `ssg-playground`, make sure you are on branch `chapter-08` or check out the completed chapter on branch `chapter-09`.) You need the same Hugo installation and editor; no new service or account is required. The agent review near the end is optional.
 
 ## 9.1 Improve the project you already have
 
@@ -478,14 +475,3 @@ Chapter 10 will use these consistent fields in Hugo templates. We will begin wit
 | Editing the archetype does not change an old page. | That is expected; update existing content separately. |
 | A build passes despite an incorrect project status. | Review the values against our model. No custom status validator has been installed. |
 
----
-
-## Editorial note for the author (remove before publication)
-
-This chapter limits content modelling to the existing Projects family. It introduces essential YAML shapes, custom parameters, a plain archetype, and the distinction between page readiness and project progress. It deliberately defers taxonomies, cascading metadata, URL overrides, computed archetype values, and automated model validation. JSON and the wider format comparison remain in Chapter 12.
-
-The model is an editorial agreement, not an enforced schema. The current layout's lack of metadata output is stated explicitly; Chapter 10 should use `description`, `params.status`, and `params.tools` without implying that earlier chapters already displayed them. Preserve the two new project paths and the manual section list as its starting checkpoint.
-
-Official Hugo documentation was consulted on 17 September 2026. The exercises were checked with Hugo 0.150.0 on Linux in a focused fixture carrying forward the earlier layout, navigation, Resources page, and project URL configuration. The original Chapter 3 project and section text were restored for the edits; unrelated destination pages retained placeholder bodies. This was not a full replay of all previous chapters.
-
-Validation covered creation from the exact archetype, exclusion and inclusion of drafts in fresh build destinations, HTTP access in the draft preview and the normal preview after publication readiness, generated project links, malformed YAML and its repair, acceptance of an editorially invalid status, and the four-file Git checkpoint. Testing also exposed retained output after a draft preview; the chapter explains that draft settings alone do not withdraw an existing copy. No external deployment, visual browser assessment, beginner trial, or live agent review was performed. The optional agent prompt is an authored exercise, not a recorded transcript.

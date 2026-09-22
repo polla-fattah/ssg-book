@@ -34,7 +34,7 @@ A shared structure is easier to write, compare, maintain, and hand to an **agent
 - **Create** a page from an archetype, and tell its path from its title
 - **Preview** a draft, review it, and link it from Projects
 
-Start from Chapter 8 with a **clean** working tree.
+Start from Chapter 8 with a **clean** working tree (companion branch `chapter-08`).
 
 ---
 
