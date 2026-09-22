@@ -2,3 +2,16 @@
 Projects can override this file. For details, see:
 https://oink.pgsty.com/docs/customize/brand/#scss
 */
+
+$primary: #047857;
+$secondary: #10B981;
+$link-color: #047857;
+$link-hover-color: #059669;
+
+$btn-primary-bg: $primary;
+$btn-primary-border-color: $primary;
+$btn-primary-hover-bg: #059669;
+$btn-primary-hover-border-color: #059669;
+$btn-primary-active-bg: #065f46;
+$btn-primary-active-border-color: #065f46;
+

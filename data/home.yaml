@@ -21,9 +21,10 @@ sections:
   - cta
 
 hero:
+  logo: icons/logo.svg
   title: Static Site Generators in the Age of AI
   # Caps the title's size; below about 950px wide it scales with the window.
-  title_size: 3.2rem
+  title_size: 3rem
   subtitle: Building and Maintaining Content with AI Agents
   # The author's illustration with its black background removed; the full-size
   # copy is "Chapters and plan/cover/hero.png" in the book workspace.
@@ -45,7 +46,6 @@ hero:
     review, and long-term maintenance, with an AI agent helping and a person
     deciding what goes live. No prior HTML, Git, or command-line experience
     is assumed.
-  note: A working draft. Each chapter opens with a note recording how far it has been tested.
   actions:
     - label: "Start reading: Chapter 1"
       url: book/chapter_01_your_first_hugo_website/

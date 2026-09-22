@@ -54,22 +54,14 @@
   --bs-tertiary-bg-rgb: 246, 249, 252;
   --bs-border-color: rgba(48, 74, 105, 0.14);
   --bs-border-color-translucent: rgba(48, 74, 105, 0.14);
-  // The link family. Every link the reader can click resolves through these
-  // four tokens, and a published theme color never touches them: prose links
-  // and external URLs stay this navy in every section, so a colored section
-  // does not turn its running text into a second kind of thing. What a theme
-  // color does move is --td-accent below. Hover leaves the muted navy for a
-  // vivid azure -- the Tailwind move, saturation doing as much of the work
-  // as lightness -- held at the brightest step that still reads AA body
-  // text on the sky canvas (4.62:1) and the white surfaces (5.09:1).
-  --bs-link-color: #245f94;
-  --bs-link-color-rgb: 36, 95, 148;
-  --bs-link-hover-color: #1d6fc4;
-  --bs-link-hover-color-rgb: 29, 111, 196;
-  // The theme accent. It defaults to the brand link color, and a published
-  // `theme_color` redeclares just these three in the head -- never the
-  // Bootstrap link family, so prose links and external URLs keep the brand
-  // blue in every section. The accent's job is grounds and hovers.
+  // The link family is aligned with the SSG green so the page reads as a
+  // single branded system in prose links, navigation, and action buttons.
+  --bs-link-color: #047857;
+  --bs-link-color-rgb: 4, 120, 87;
+  --bs-link-hover-color: #059669;
+  --bs-link-hover-color-rgb: 5, 150, 105;
+  // The theme accent follows the same green family so the shell and action
+  // surfaces share the same brand palette.
   --td-accent: var(--bs-link-color);
   --td-accent-rgb: var(--bs-link-color-rgb);
   --td-accent-hover: var(--bs-link-hover-color);
@@ -93,8 +85,8 @@
   --td-brand-header-bg: rgba(241, 244, 248, 0.85);
   --td-brand-shadow-sm: 0 2px 10px rgba(23, 42, 66, 0.08);
   --td-brand-shadow-md: 0 12px 34px rgba(23, 42, 66, 0.12);
-  --td-brand-mark-from: #1d588c;
-  --td-brand-mark-to: #b4762e;
+  --td-brand-mark-from: #047857;
+  --td-brand-mark-to: #10B981;
   --td-brand-mark-gradient: linear-gradient(
     115deg,
     var(--td-brand-mark-from) 6%,
@@ -119,10 +111,10 @@
   --bs-tertiary-bg-rgb: 24, 36, 53;
   --bs-border-color: rgba(148, 176, 210, 0.16);
   --bs-border-color-translucent: rgba(148, 176, 210, 0.16);
-  --bs-link-color: #5da2dd;
-  --bs-link-color-rgb: 93, 162, 221;
-  --bs-link-hover-color: #7fb8e8;
-  --bs-link-hover-color-rgb: 127, 184, 232;
+  --bs-link-color: #6ee7b7;
+  --bs-link-color-rgb: 110, 231, 183;
+  --bs-link-hover-color: #a7f3d0;
+  --bs-link-hover-color-rgb: 167, 243, 208;
   --td-accent: var(--bs-link-color);
   --td-accent-rgb: var(--bs-link-color-rgb);
   --td-accent-hover: var(--bs-link-hover-color);
@@ -137,8 +129,8 @@
   --td-brand-header-bg: rgba(11, 17, 25, 0.92);
   --td-brand-shadow-sm: 0 4px 18px rgba(2, 8, 18, 0.35);
   --td-brand-shadow-md: 0 14px 44px rgba(2, 8, 18, 0.45);
-  --td-brand-mark-from: #7fb8e8;
-  --td-brand-mark-to: #e0a35c;
+  --td-brand-mark-from: #6ee7b7;
+  --td-brand-mark-to: #10B981;
 }
 
 // A section's own color, carried per element as a light/dark pair. The

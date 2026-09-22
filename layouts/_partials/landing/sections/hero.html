@@ -70,6 +70,14 @@
       </p>
       {{- end }}
       <h1 class="td-landing-hero__title" id="{{ $id }}-title">
+        {{- with $hero.logo }}
+          {{- $logoResource := resources.Get . -}}
+          {{- with $logoResource }}
+        <span class="td-landing-hero__brand" aria-label="SSG logo">
+          <img src="{{ .RelPermalink }}" alt="SSG logo" />
+        </span>
+          {{- end }}
+        {{- end }}
         {{- with $titleLines -}}
           {{- range . }}
         <span>
