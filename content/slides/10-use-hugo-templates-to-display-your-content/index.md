@@ -34,7 +34,7 @@ Change a description once; it updates everywhere Hugo uses it.
 - **Use** `range` to display a list, while tracking what the dot means
 - **Build** an automatic Projects list, and diagnose a template error
 
-Start from Chapter 9: both projects `draft: false`, a **clean** tree.
+Start from Chapter 9: both projects `draft: false`, a **clean** tree (companion branch `chapter-09`).
 
 ---
 

@@ -7,9 +7,6 @@ book_number: 10
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial, browser review, or deployment yet.*
-
 Your two project pages now contain useful information in their front matter. The description, status, and tools are organised, but visitors cannot see them yet. You also maintain a separate list of project links by hand.
 
 A template can use those existing values to produce the page. Change a project's description once, and Hugo can use it both on the project page and in the Projects list.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Use `range` to display a list, while tracking what the dot represents.
 - Build an automatic Projects list and diagnose a common template error.
 
-Start from the completed Chapter 9 checkpoint. Both project pages should be ready for normal builds, with `draft: false`, and the Git working tree should be clean. If you deliberately retained the reading-list page as a draft, finish reviewing it before following the two-project examples below.
+Start from the completed Chapter 9 checkpoint. (If you are following along in the companion repository `ssg-playground`, make sure you are on branch `chapter-09` or check out the completed chapter on branch `chapter-10`.) Both project pages should be ready for normal builds, with `draft: false`, and the Git working tree should be clean. If you deliberately retained the reading-list page as a draft, finish reviewing it before following the two-project examples below.
 
 Use the same Hugo installation. These exercises continue the `layouts/all.html` convention used since Chapter 1 and tested with Hugo 0.150.0. We will edit that existing layout and the Projects section introduction. No new package, theme, or programming-language installation is required.
 
@@ -461,16 +458,3 @@ This is the core result before the independent status-in-the-list variation. Use
 </article>
 ```
 
----
-
-## Editorial note for the author (remove before publication)
-
-This chapter introduces a small working subset of Go templates: value output, conditions, `with`, `range`, context, one existing pipe, page collections, and page URLs. Keep variables, partials, base templates, more elaborate lookups, and data transformations out of this exercise. Chapter 11 should start from the two-file checkpoint and retain the independent addition of status to each list entry.
-
-The Projects condition is deliberately tied to the current shallow content structure. The list is based on direct regular children rather than a recursive or site-wide collection. Description output is a visible paragraph; this chapter does not add an HTML meta description. The existing shared layout continues to serve all authored pages.
-
-Official Hugo documentation was consulted on 17 September 2026. Examples were checked with Hugo 0.150.0 on Linux in a focused fixture containing the two Chapter 9 projects and the complete Chapter 4 shared layout. Unrelated destination pages retained placeholder bodies; this was not a full replay of the earlier chapters.
-
-The successive edits produced the supplied comparison block. Checks covered optional descriptions and parameters, an empty tools list, project ordering, links at both a domain root and the GitHub project prefix, list placement, propagation of description edits, HTML escaping of description text, empty and draft-inclusive collections, the deliberate context error and its repair, and the independent status addition. The completed exercise produced a clean Git checkpoint with only the two intended files changed.
-
-These were command-line build and generated-HTML checks. Visual browser review, a representative beginner trial, and an external deployment were not performed. The optional agent request is an authored exercise, not a recorded transcript.
