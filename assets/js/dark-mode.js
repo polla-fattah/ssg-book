@@ -33,7 +33,9 @@
       return storedTheme
     }
 
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    // Default the site to dark mode unless the user has chosen a different
+    // theme or the browser has an explicit saved preference.
+    return 'dark'
   }
 
   // Vendored runtimes ship their own dark palettes but key them on their own

@@ -165,7 +165,7 @@ params:
     image_zoom: false
     # Dark palette and theme menu: `dark_mode: true` is the shorthand for
     # `dark_mode: { enable: true, show_menu: true }`.
-    dark_mode: false
+    dark_mode: true
     typography: technical # technical | system
     # Font faces by typography role, for a site that wants a different face
     # without mounting SCSS or adding a stylesheet. `ui` is the main face:
