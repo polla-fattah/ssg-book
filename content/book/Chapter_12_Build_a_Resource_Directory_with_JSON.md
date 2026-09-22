@@ -7,9 +7,6 @@ book_number: 12
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Checked with Hugo 0.150.0 on Linux in a focused fixture. No beginner trial, browser review, or deployment yet.*
-
 Your Resources page contains a small collection of links. Markdown handles that well. As the collection grows, however, you may want every entry to have the same information: a title, an address, a short explanation, and a few topics.
 
 We will store those repeated details in JSON and let a Hugo partial display them. The surrounding introduction and links to your own notebook pages will remain ordinary Markdown.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Distinguish a parsing error from incorrect or incomplete information.
 - Choose a suitable format for page writing, configuration, records, or spreadsheet exchange.
 
-Start from the completed Chapter 11 checkpoint with a clean Git working tree. Keep the same Hugo installation and shared templates. No database, JavaScript package, or external data service is required. Internet access is useful for checking the linked documentation, but the directory itself is built from a local file.
+Start from the completed Chapter 11 checkpoint with a clean Git working tree. (If you are following along in the companion repository `ssg-playground`, make sure you are on branch `chapter-11` or check out the completed chapter on branch `chapter-12`.) Keep the same Hugo installation and shared templates. No database, JavaScript package, or external data service is required. Internet access is useful for checking the linked documentation, but the directory itself is built from a local file.
 
 ## 12.1 Put two existing resources into JSON
 
@@ -462,17 +459,3 @@ Chapter 13 turns supplied source material into linked pages. The field agreement
 | A build passes but a destination fails. | Verify the URL itself. This template does not perform remote-link checks. |
 
 ---
-
-## Editorial note for the author (remove before publication)
-
-JSON is the hands-on focus. YAML and TOML are recognition comparisons building on earlier chapters; CSV introduces conversion decisions, and XML is brief orientation. The chapter does not add a database, API retrieval, a browser-side loader, a complete schema validator, or automated format conversion.
-
-The canonical checkpoint uses a JSON asset with `resources.Get` and `transform.Unmarshal`. This works with the book's Hugo 0.150.0 baseline without relying on the later `hugo.Data` API or deprecated `.Site.Data` access. Hugo also has a root `data` directory, but it is not the source location used by this exercise. Keep the complete `assets/data/` path consistent in future chapters.
-
-The generated Website publishing section follows the retained Markdown sections and keeps its fragment identifier. Its external links are complete URLs; internal notebook links remain in Markdown. Chapter 13 should retain the three records and use supplied source material for any proposed additions.
-
-Official documentation was consulted on 17 September 2026. The exact JSON and templates were checked with Hugo 0.150.0 on Linux against the Chapter 11 validation fixture. Seven other authored routes retained their generated structure and meaningful text. As in earlier checks, some unrelated page bodies were placeholders; this was not a complete replay of the book.
-
-Checks covered two-record rendering, addition and reordering of the third record, preservation of the Resources Markdown sections, the heading fragment, external and internal destinations at root and project-prefix configurations, malformed and missing input, empty arrays and topics, the quoted-Boolean pitfall, HTML escaping, and the five-file Git checkpoint. The JSON asset was not separately published by this rendering path. The supplied TOML, CSV, and XML examples were also parsed locally; no automated conversion pipeline was created.
-
-External documentation pages were consulted, but visual browser review, a beginner trial, and a live deployment were not performed. The template is intentionally not a complete record-schema or remote-link validator; later CI work should distinguish these checks from parsing and rendering.

@@ -34,7 +34,7 @@ Add a resource by editing **data**; the template supplies the HTML.
 - **Distinguish** a parsing error from wrong or missing information
 - **Choose** a format for writing, configuration, records, or spreadsheets
 
-Start from Chapter 11 with a **clean** tree. No database, package, or data service.
+Start from Chapter 11 with a **clean** tree (companion branch `chapter-11`). No database, package, or data service.
 
 ---
 
