@@ -7,9 +7,6 @@ book_number: 19
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*A planning chapter with no new software steps. The worked brief and the feature table are authored; no project has been built from them and no beginner trial has been run.*
-
 Eighteen chapters ago you did not have a website. You now have one that is published, checked before every change, searchable, partly bilingual, able to receive a message, and covered by a maintenance routine you wrote yourself. More importantly, you have done each of those things once, deliberately, and can explain why.
 
 This chapter turns that into something of your own. You will choose a project, write a brief that says what you are not building, pick features by what they cost to keep rather than by what is possible, and test that brief before writing a single page. Then you will build it from a checkpoint, agree who reviews and who maintains it, and decide what "delivered" means.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Test a brief for scope, checkability, and ownership before building.
 - Say what has to be true before you call a website delivered.
 
-Start from any completed checkpoint in this book, or from an empty folder if you would rather. You need the tools installed in Chapters 1, 6, 7, and 8, and nothing new.
+Start from any completed checkpoint in this book (if you are following along in the companion repository `ssg-playground`, branch `chapter-18` provides the full working notebook codebase, or check out branch `chapter-19` for the final completed reference repository including `BRIEF.md`), or from an empty folder if you would rather. You need the tools installed in Chapters 1, 6, 7, and 8, and nothing new.
 
 This chapter has no single correct answer, so it works differently from the others: the guided exercise is a planning sequence, and the comparison at the end is a worked brief rather than a file to match.
 
@@ -292,17 +289,3 @@ Next review: the first Monday of next term.
 ```
 
 Read what that brief refuses. No forum, no accounts, no translation, no analytics, no contact form, and search only at a stated threshold. Each refusal is a maintenance obligation the author will not carry, and each one is easier to defend written down than argued case by case.
-
----
-
-## Editorial note for the author (remove before publication)
-
-This chapter deliberately teaches no new software. Everything it asks for exists by Chapter 18, and the work is deciding rather than building. That makes it structurally unlike the other eighteen, and two consequences need to be accepted rather than smoothed away: the guided exercise is a planning sequence whose output differs for every reader, and the comparison appendix is a worked brief rather than a file to match.
-
-It is also the only chapter with no forward pointer, because there is no Chapter 20. The closing prose in Section 19.8 replaces it, and the completion check's closing paragraph names what lies outside the book instead of what comes next. Any automated consistency check over the chapters should expect that exception rather than flagging it.
-
-Section 19.4 is the designed failure, and the only one in the book that is not technical. A first brief usually fails the scope or checkability test, and the chapter says so in advance so a reader treats the failure as the exercise working. The three-row verification table is Chapter 14's automated-versus-human distinction moved one step earlier, before the work exists, which is where it saves the most effort. The third row, "nothing", is the load-bearing part.
-
-The capability table in Section 19.3 is the chapter's most useful artifact and the most likely to rot. It must be re-derived if chapters are renumbered or a capability moves. The yes/later/no instruction matters more than the table: the book's arc has been additive, and this is the one place that teaches subtraction.
-
-A course website is the worked example because it is the likeliest real use for this book's reader, and its exclusions are unusually clear. The brief is fictional. Validation here means a trial rather than a build; see the validation record.

@@ -35,7 +35,7 @@ A site a stranger can use, you can maintain in a year, and whose quality you can
 - **Test** a brief for scope, checkability, and ownership before building
 - **Say** what must be true before you call a website delivered
 
-No new software. The exercise is a **planning sequence**, with no single right answer.
+No new software. Start from Chapter 18 (branch `chapter-18` or reference `chapter-19`). The exercise is a **planning sequence**, with no single right answer.
 
 ---
 
