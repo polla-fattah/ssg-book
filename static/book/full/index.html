@@ -20,10 +20,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 :root {
-  --primary: #0284c7;
-  --primary-hover: #0369a1;
-  --primary-light: #f0f9ff;
-  --primary-border: #bae6fd;
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-dark: #064e3b;
+  --primary-light: #ecfdf5;
+  --primary-border: #a7f3d0;
   --accent-emerald: #059669;
   --accent-emerald-light: #ecfdf5;
   --accent-amber: #d97706;
@@ -77,7 +78,7 @@ body {
   top: 0;
   left: 0;
   height: 3.5px;
-  background: linear-gradient(90deg, #0284c7 0%, #059669 100%);
+  background: linear-gradient(90deg, #10b981 0%, #059669 50%, #047857 100%);
   width: 0%;
   z-index: 2000;
   transition: width 80ms ease-out;
@@ -167,7 +168,7 @@ body {
 .chapter-switcher-select:focus,
 .chapter-switcher-select:hover {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
 }
 
 .book-nav-actions {
@@ -287,7 +288,7 @@ body {
 .sidebar-search-box:focus {
   background: #ffffff;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
 }
 
 .sidebar-toc-list {
@@ -672,9 +673,9 @@ body {
   font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
   font-size: 0.88em;
   font-weight: 500;
-  color: #0369a1;
-  background-color: #f1f5f9;
-  border: 1px solid #e2e8f0;
+  color: #047857;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
   padding: 0.18em 0.45em;
   border-radius: 4px;
   word-break: break-word;
@@ -888,7 +889,7 @@ tr:hover td {
 .callout-tip {
   border-left-color: var(--primary);
   background: var(--primary-light);
-  color: #0c4a6e;
+  color: #064e3b;
 }
 
 .callout-tip .callout-header {
@@ -1003,7 +1004,7 @@ tr:hover td {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.45);
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.45);
   text-decoration: none;
   font-size: 1.1rem;
   transition: transform 160ms ease, background 160ms ease, opacity 200ms ease;
