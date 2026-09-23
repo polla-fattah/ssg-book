@@ -7,9 +7,6 @@ book_number: 16
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*The added CI check was verified against a fixture. No Hugo build, browser review, right-to-left rendering check, native-speaker review of the Kurdish strings, or beginner trial yet.*
-
 Your notebook is in English. If some of your readers would rather read Kurdish, or if your work belongs to a place where two languages are normal, the site should be able to say the same things twice.
 
 In this chapter you will add Kurdish Sorani as a second language, translate the navigation and two pages, and give the document the language and text direction a browser needs. Kurdish Sorani is written in a Perso-Arabic script and runs right to left, so this is also the first time your layout has to work in the other direction. You will find and repair the one stylesheet rule that assumes left to right.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Recognise a layout rule that assumes one text direction, and replace it.
 - Say what must be true before you publish a translation you cannot read.
 
-Start from the completed Chapter 15 checkpoint with a clean working tree on `main`. Work on a branch and propose the result through a pull request, as in Chapters 14 and 15.
+Start from the completed Chapter 15 checkpoint with a clean working tree on `main`. (If you are following along in the companion repository `ssg-playground`, make sure you start from branch `chapter-15` or check out the completed chapter on branch `chapter-16`.) Work on a branch and propose the result through a pull request, as in Chapters 14 and 15.
 
 One requirement is not technical. If you do not read the second language, you need someone who does, and Section 16.6 explains why that is not optional. Choose a language you can have reviewed before you begin.
 
@@ -46,21 +43,23 @@ description = 'Learning notes, small projects, and useful references, published 
 
 [languages]
   [languages.en]
-    languageCode = 'en'
-    languageName = 'English'
+    locale = 'en'
+    label = 'English'
     title = 'My Knowledge Notebook'
     weight = 1
   [languages.ckb]
-    languageCode = 'ckb'
-    languageName = 'کوردی'
-    languageDirection = 'rtl'
+    locale = 'ckb'
+    label = 'کوردی'
+    direction = 'rtl'
     title = 'تێبینییەکانی من'
     weight = 2
 ```
 
+> **Note on Hugo configuration keys:** In modern Hugo releases (v0.158+), `locale`, `label`, and `direction` are the canonical keys. Earlier versions used `languageCode`, `languageName`, and `languageDirection`; in recent versions, using the older keys triggers deprecation warnings that cause `hugo --panicOnWarning` to halt.
+
 Two settings carry the whole decision. `defaultContentLanguage = 'en'` says English is the default, and `defaultContentLanguageInSubdir = false` says the default language stays where it is. English pages keep `/about/`; Kurdish pages will appear under `/ckb/about/`. Setting that second value to `true` would move every English page to `/en/...` and break every address you have published and every link anyone has saved.
 
-`ckb` is the language code for Kurdish Sorani. `weight` sets the order languages are listed in. `languageDirection = 'rtl'` records that this language runs right to left, which Section 16.2 will use. Each language has its own `title`, so the site name itself is translated. [Hugo: multilingual mode](https://gohugo.io/content-management/multilingual/)
+`ckb` is the language code for Kurdish Sorani. `weight` sets the order languages are listed in. `direction = 'rtl'` records that this language runs right to left, which Section 16.2 will use. Each language has its own `title`, so the site name itself is translated. [Hugo: multilingual mode](https://gohugo.io/content-management/multilingual/)
 
 Build and preview:
 
@@ -86,10 +85,12 @@ That was true when there was one language. Now it is a statement the Kurdish pag
 Replace that line with:
 
 ```html
-<html lang="{{ .Site.Language.LanguageCode }}" dir="{{ .Site.Language.LanguageDirection | default "ltr" }}">
+<html lang="{{ .Site.Language.Locale }}" dir="{{ .Site.Language.Direction | default "ltr" }}">
 ```
 
-The `dir` attribute is what actually turns the page around. It is not decoration: it tells the browser that text, punctuation, and the natural start of a line all run from the right. `default "ltr"` supplies a value for English, which has no `languageDirection` in the configuration, and is the same `default` idea you could use anywhere a setting might be absent.
+*(Note: in older Hugo versions, `.LanguageCode` and `.LanguageDirection` were used; modern Hugo uses `.Locale` and `.Direction`.)*
+
+The `dir` attribute is what actually turns the page around. It is not decoration: it tells the browser that text, punctuation, and the natural start of a line all run from the right. `default "ltr"` supplies a value for English, which has no `direction` in the configuration, and is the same `default` idea you could use anywhere a setting might be absent.
 
 Rebuild and view the source of an English page. It should read `lang="en"` and `dir="ltr"`. We cannot check the Kurdish side until there is a Kurdish page, which is Section 16.5.
 
@@ -157,7 +158,7 @@ Create the language switcher as `layouts/_partials/language-links.html`:
 {{ with .Translations }}
   <nav aria-label="{{ i18n "languages_label" }}" class="language-links">
     {{ range . }}
-      <a href="{{ .RelPermalink }}" lang="{{ .Language.LanguageCode }}" hreflang="{{ .Language.LanguageCode }}">{{ .Language.LanguageName }}</a>
+      <a href="{{ .RelPermalink }}" lang="{{ .Language.Locale }}" hreflang="{{ .Language.Locale }}">{{ .Language.Label }}</a>
     {{ end }}
   </nav>
 {{ end }}
@@ -459,17 +460,3 @@ params:
 ```
 
 Note what the Kurdish home page does not do: it does not reproduce the four-item Explore the notebook list from the English home page, because only About exists in Kurdish. Its last section says so directly rather than leaving a reader to discover it.
-
----
-
-## Editorial note for the author (remove before publication)
-
-Every Kurdish string here, in the `i18n` file and the comparison pages, must be reviewed by a Sorani speaker before publication. The navigation terms are standard web-interface words and should be low risk; the page bodies are short and deliberately plain, but they remain unreviewed machine-produced Kurdish in a chapter whose own rule forbids exactly that. Treat the chapter as failing its own standard until that review happens. Arabic is offered in the opening for authors without a Sorani reviewer.
-
-Section 16.1 leads because it is the irreversible decision. Translation by filename with `defaultContentLanguageInSubdir = false` preserves every published English address; translation by directory would have moved the whole tree and invalidated Chapter 7's live URLs.
-
-Chapter 15 predicted this chapter would make the Hugo menu system necessary. It does not, and Section 16.3 shows why: both languages offer the same six destinations, so only labels and prefixes differ, which `i18n` and `relLangURL` handle with less machinery. Menus win when the *set* of destinations differs between languages or sections. Consider softening Chapter 15's sentence for readers who remember the promise.
-
-Section 16.4's failure was found by reading rather than invented: `.skip-link` holds the only physical-direction property in the stylesheet, so right-to-left genuinely misplaces it, and a keyboard user meets it first. Section 16.6 is the strictest instruction in the book and should stay strict; the back-translation warning matters most, because it is the workaround a reader will reach for and it launders errors into fluent English.
-
-The added workflow step was executed against a fixture, and review corrected three drafting errors including a footer left on `relURL`. Nothing else is validated. See the validation record.

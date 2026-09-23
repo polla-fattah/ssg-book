@@ -35,7 +35,7 @@ Arabic, or any other language, works the same way.
 - **Recognise** a layout rule that assumes one direction, and replace it
 - **Say** what must be true before you publish a translation you cannot read
 
-Start from Chapter 15, on a **branch**. If you do not read the language, find **someone who does** first.
+Start from Chapter 15 (branch `chapter-15`), on a **branch**. If you do not read the language, find **someone who does** first.
 
 ---
 
