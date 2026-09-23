@@ -1,0 +1,44 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <style>
+      .shield-bg { fill: #047857; }
+      .shield-left { fill: #10B981; }
+      .shield-right { fill: #059669; }
+      .facet-highlight { fill: #34D399; opacity: 0.2; }
+      .text-left { fill: #FFFFFF; }
+      .text-right { fill: #E6FFFA; }
+    </style>
+  </defs>
+
+  <!-- Outer Lip -->
+  <polygon class="shield-bg" points="72,36 440,36 408,420 256,476 104,420" />
+
+  <!-- Left Facet -->
+  <polygon class="shield-left" points="256,66 102,66 128,392 256,438" />
+
+  <!-- Right Facet -->
+  <polygon class="shield-right" points="256,66 410,66 384,392 256,438" />
+
+  <!-- Top Bevel Highlight -->
+  <polygon class="facet-highlight" points="102,66 410,66 394,106 118,106" />
+
+  <!-- Monogram: Left side (pure white) & Right side (shaded to match facet) -->
+  <g class="text-left">
+    <!-- First 'S' -->
+    <path d="M 124 180 L 206 180 L 206 216 L 158 216 L 158 238 L 206 250 L 206 312 L 124 312 L 124 276 L 172 276 L 172 260 L 124 248 Z" />
+
+    <!-- Second 'S' (Crosses the center line) -->
+    <path d="M 218 180 L 256 180 L 256 248 L 218 238 L 218 216 L 256 216 L 256 180 Z" />
+    <path d="M 218 312 L 218 276 L 256 276 L 256 312 Z" />
+  </g>
+
+  <g class="text-right">
+    <!-- Second 'S' (Right half) -->
+    <path d="M 256 180 L 298 180 L 298 216 L 256 216 Z" />
+    <path d="M 256 248 L 298 258 L 298 312 L 256 312 Z" />
+    <path d="M 256 260 L 264 260 L 264 276 L 256 276 Z" />
+
+    <!-- Letter 'G' -->
+    <path d="M 310 180 L 392 180 L 392 216 L 344 216 L 344 276 L 368 276 L 368 254 L 392 254 L 392 312 L 310 312 Z" />
+  </g>
+</svg>

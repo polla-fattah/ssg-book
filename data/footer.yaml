@@ -2,6 +2,7 @@
 # against the site's base address, so they work under /ssg-book/.
 brand:
   name: Static Site Generators in the Age of AI
+  logo: icons/logo.svg
   tagline: Building and Maintaining Content with AI Agents
   slogan: A working draft. Each chapter records how far it has been tested.
 columns:
