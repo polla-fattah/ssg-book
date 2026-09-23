@@ -249,8 +249,18 @@ principles:
       desc: A passing build proves the site renders. Only a person can decide that it is true.
 
 cta:
-  title: Start with Chapter 1.
-  desc: One page, one local preview, and one deliberate mistake you will know how to repair.
-  label: Start reading
-  url: book/chapter_01_your_first_hugo_website/
-  style: primary
+  title: Read the Complete Book Online or Download
+  desc: View all 19 chapters entirely in your browser, download the full PDF with covers and bookmarks, or read chapter by chapter.
+  actions:
+    - label: View Entirely (HTML)
+      url: book/full/
+      icon: fa-solid fa-book-open-reader
+      style: primary
+    - label: Download (PDF)
+      url: downloads/Static_Site_Generators_in_the_Age_of_AI.pdf
+      icon: fa-solid fa-file-pdf
+      style: primary
+    - label: Start Chapter 1
+      url: book/chapter_01_your_first_hugo_website/
+      icon: fa-solid fa-compass
+      style: ghost
