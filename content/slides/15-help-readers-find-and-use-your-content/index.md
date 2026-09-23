@@ -34,7 +34,7 @@ And a page that still lists every destination when **JavaScript does not run**.
 - **Build** a search page from your own content, filtered in the browser
 - **Test** by keyboard and without JavaScript, and say what a score cannot show
 
-Start from Chapter 14, and work on a **branch**.
+Start from Chapter 14 (branch `chapter-14`), and work on a **branch**.
 
 ---
 
