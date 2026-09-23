@@ -14,6 +14,9 @@
   {{- with .Description }}
   <meta name="description" content="{{ . }}">
   {{- end }}
+  <link rel="icon" type="image/svg+xml" href="{{ "icons/logo.svg" | relURL }}">
+  <link rel="alternate icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+  {{ partialCached "favicons.html" . }}
   {{- with resources.Get "slides/deck.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
   {{- end }}
