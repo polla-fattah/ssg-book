@@ -7,9 +7,6 @@ book_number: 14
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*The three shell rule checks were verified against a reconstructed content fixture. No Hugo build, GitHub Actions run, pull request, ruleset configuration, or beginner trial yet.*
-
 Chapter 6 deferred branching until there was a concrete reason to use it. This is that reason. Every change you have made since then went straight onto `main`, and every push to `main` publishes.
 
 In this chapter, you will add a second workflow that examines a proposed change before it can reach the live site. It builds the site and checks three rules this book has already established: directory flags must be real Booleans, internal links must stay relative, and articles and projects must carry a description. Then you will propose a change on a branch, break one of those rules on purpose, and watch the checks stop it.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Run the same checks locally before pushing.
 - Explain what a passing check does and does not establish before you merge.
 
-Start from the completed Chapter 13 checkpoint with a clean Git working tree, pushed to GitHub, with the Chapter 7 publishing workflow in place and a working public address. You need the GitHub CLI authentication from Chapter 7 and access to your repository's settings.
+Start from the completed Chapter 13 checkpoint with a clean Git working tree, pushed to GitHub, with the Chapter 7 publishing workflow in place and a working public address. (If you are following along in the companion repository `ssg-playground`, make sure you start from branch `chapter-13` or check out the completed chapter on branch `chapter-14`.) You need the GitHub CLI authentication from Chapter 7 and access to your repository's settings.
 
 Everything here runs on GitHub's free runners for a public repository. Automation minutes are billed differently for private repositories and for larger runners; check your account's current terms before moving this arrangement to other work.
 
@@ -184,7 +181,7 @@ git status
 
 `git switch -c` creates the branch and moves onto it. Status should report the new branch with a clean tree. Nothing has been copied; a branch is a name for a line of commits, not a second folder. [Git: switch](https://git-scm.com/docs/git-switch)
 
-Now make the proposed change. Add a fourth record at the end of the array in `assets/data/resource_links.json`, following the Chapter 12 agreement. Remember the comma after the previous record's closing brace:
+Now make the proposed change. Add a fifth record at the end of the array in `assets/data/resource_links.json`, following the Chapter 12 agreement. Remember the comma after the previous record's closing brace:
 
 ```json
 {
@@ -316,7 +313,7 @@ Merging commits the change to `main`, which is a push to `main`, which starts th
 | --- | --- |
 | Actions | Both workflows appear in the history, with distinct names and purposes |
 | The publishing run | It built and deployed after the merge |
-| The live Resources page | Four records, correct topics, one Start here label |
+| The live Resources page | Five records, correct topics, one Start here label |
 | The live article | The first learning note still reads correctly after its description was added |
 | The rest of the site | Navigation, Projects, and the footer are unchanged |
 
@@ -385,17 +382,3 @@ git branch -d my-change          # delete the local branch once merged
 ```
 
 Run the local checks from Section 14.3 before each push. Open, read, and merge the pull request on GitHub.
-
----
-
-## Editorial note for the author (remove before publication)
-
-This chapter cashes the promise Chapter 6 made when it deferred branching, and it is the first place a branch has a purpose the reader can feel. Preserve that ordering; branching taught earlier would have been vocabulary without a use.
-
-Each of the three rules was already established by the book and has already caused a failure a reader has seen: the Boolean rule from Chapter 12's quoted-`"false"` pitfall, the relative-link rule from Chapter 8's root-relative mistake, the description rule from the models in Chapters 9 and 13. Section 14.7's table also answers Chapter 12's editorial note, which asked that later CI work separate parsing from rendering from meaning. The checks are deliberately crude `grep` commands the reader can run by hand; resist replacing them with a marketplace action that hides its behaviour.
-
-Section 14.3's failure on `content/articles/first-learning-note/index.md` is load-bearing, not an oversight. That article was written in Chapter 2 with only `title` and `draft`, and Chapter 13 did not retrofit it. A new check finding older work is the normal experience of adopting CI, and the chapter raises the content rather than weakening the rule.
-
-Two workflow files rather than one is also deliberate: it leaves the working deployment untouched and makes the trigger and permission differences legible side by side. Reconsider a single file with a conditional deploy job if the trial shows readers confused about which workflow ran.
-
-The three checks were executed against a content fixture; no Hugo build, Actions run, pull request, ruleset, or deployment has been performed. See the validation record.

@@ -34,7 +34,7 @@ Every change so far went straight onto `main`, and **every push to `main` publis
 - **Run** the same checks locally before pushing
 - **Explain** what a passing check does, and does not, establish
 
-Start from Chapter 13: clean, pushed, and publishing through Chapter 7's workflow.
+Start from Chapter 13 (branch `chapter-13`): clean, pushed, and publishing through Chapter 7's workflow.
 
 ---
 
@@ -184,7 +184,7 @@ git status
 
 ---
 
-## A fourth record, at the end of the array
+## A fifth record, at the end of the array
 
 ```json
 {
@@ -311,7 +311,7 @@ Read Files changed once more: **one** added record. Merge it.
 Merging **is** a push to `main`, so the publishing workflow runs:
 
 - Both workflows in the Actions history, with distinct names
-- The live Resources page: four records, one Start here label
+- The live Resources page: five records, one Start here label
 - The first learning note, Projects, navigation, and footer: unchanged
 
 ---
