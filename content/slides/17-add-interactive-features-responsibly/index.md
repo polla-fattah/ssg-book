@@ -34,7 +34,7 @@ A contact form is where a static site meets its **actual limit**.
 - **Explain** why a static site cannot receive a submission, and the options
 - **Explain** why a secret cannot be kept in a static site
 
-No account, payment, or third-party service. Work on a **branch**.
+No account, payment, or third-party service. Start from Chapter 16 (branch `chapter-16`), on a **branch**.
 
 ---
 

@@ -7,9 +7,6 @@ book_number: 17
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*The browser script was checked in isolation. No Hugo build, browser review, mail-client handoff test, or beginner trial yet.*
-
 Readers who find something useful on your site may want to reply to it. A contact form is the obvious way to invite that, and it is also the point where a static site meets its actual limit.
 
 Your site is a set of files. It has no program running on a server, so there is nothing on your side to receive a submitted message. In this chapter you will build a proper contact form, watch it fail to send, and then make it work in the one way a site like yours can without collecting anyone's data: by handing the message to the visitor's own mail program.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Explain why a static site cannot receive a form submission, and what the options are.
 - Explain why a secret cannot be kept in a static site.
 
-Start from the completed Chapter 16 checkpoint with a clean working tree on `main`. Work on a branch and propose the result through a pull request.
+Start from the completed Chapter 16 checkpoint with a clean working tree on `main`. (If you are following along in the companion repository `ssg-playground`, make sure you start from branch `chapter-16` or check out the completed chapter on branch `chapter-17`.) Work on a branch and propose the result through a pull request.
 
 Nothing in this chapter requires an account, a payment, or a third-party service. Section 17.6 explains what services do and what you would be agreeing to, but the built feature deliberately sends no visitor data anywhere.
 
@@ -386,17 +383,3 @@ Chapter 18 turns to keeping all of this working: reviewing content, updating wha
 | A spam message arrives. | Your address is public, which is the stated cost of this approach. Filter at your mail provider; there is no form to protect. |
 
 A form that collects nothing still makes a promise to the person filling it in. Keep the page's description of what happens true, especially if you change how it works.
-
----
-
-## Editorial note for the author (remove before publication)
-
-Section 17.3's failure is the chapter's spine: a beginner presses a button, loses their text, and possibly sees it in the address bar. That is a real defect of naive static forms and the most memorable way to teach where processing occurs. Keep the leaked-values observation; it makes the limit feel consequential rather than academic.
-
-Requiring no account was a firm constraint, following the blueprint's rule that account requirements and costs be stated before an exercise. A chapter that made readers sign up for a form service would also have made them accept a third party's terms on their visitors' behalf. Section 17.6 explains the alternatives well enough to choose one, which meets the plan's "external services and APIs" requirement without building one.
-
-Section 17.7 earns its own section: a static site cannot hold a secret. It is the concrete reason build-time fetching exists, it connects to Chapter 6's point that history is permanent, and it forestalls the most likely serious mistake a reader could make with an API. Do not soften the revoke-immediately instruction.
-
-The Kurdish gap in Section 17.8 is intentional and left unresolved. A footer link added here creates a dead destination in the language added in Chapter 16: exactly the maintenance cost Section 16.7 described, arriving one chapter later. Offering the reader two honest repairs rather than supplying one makes the trade explicit.
-
-The Section 17.4 script was executed against a stand-in for its page, which corrected how the address is encoded. No Hugo build, browser, or mail-client handoff has been tested. See the validation record.
