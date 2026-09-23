@@ -34,7 +34,7 @@ Chapter 8 was three bullets. Real content work is larger, and **harder to check*
 - **Break** a contribution into steps you can each review
 - **Check** a draft's claims against the source, and reject an unsupported one
 
-Start from Chapter 12 with a **clean** tree and Codex from Chapter 8.
+Start from Chapter 12 (branch `chapter-12`) with a **clean** tree and Codex from Chapter 8.
 
 ---
 

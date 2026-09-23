@@ -7,9 +7,6 @@ book_number: 13
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*Not yet validated: no Hugo build check, agent session, browser review, or beginner trial has been performed for this chapter.*
-
 In Chapter 8, you gave an agent a small, self-contained job: three bullets in one file. You could read the whole result in a minute. Real content work is larger than that, and its mistakes are harder to see.
 
 In this chapter, you will produce a complete article from source material you supply, then connect it to the rest of the site. The work is divided into three requests: a plan, a draft, and a coordinated update across several files. You will review the claims in the draft against the source before publishing anything.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Break a content contribution into steps that can each be reviewed.
 - Check a draft's claims against its source and reject an unsupported sentence.
 
-Start from the completed Chapter 12 checkpoint with a clean Git working tree. You need the Codex CLI installation and account access from Chapter 8, the article and project pages from Chapters 2, 3, and 9, and the JSON directory from Chapter 12. Nothing new is installed in this chapter.
+Start from the completed Chapter 12 checkpoint with a clean Git working tree. (If you are following along in the companion repository `ssg-playground`, make sure you start from branch `chapter-12` or check out the completed chapter on branch `chapter-13`.) You need the Codex CLI installation and account access from Chapter 8, the article and project pages from Chapters 2, 3, and 9, and the JSON directory from Chapter 12. Nothing new is installed in this chapter.
 
 If your account cannot currently reach an agent, you can still complete the exercise by applying the comparison article near the end of the chapter yourself. That practises the Hugo work and the review, but not the delegation.
 
@@ -496,17 +493,3 @@ And the two added bullets, in their existing lists:
 ```markdown
 - [What I learned publishing with GitHub Pages](articles/publishing-with-github-pages/)
 ```
-
----
-
-## Editorial note for the author (remove before publication)
-
-This is the second half of the agent thread opened in Chapter 8. That chapter taught a bounded single-file edit; this one teaches sourcing, decomposition, attribution, and claim checking on a contribution too large to verify at a glance. The three-request sequence (plan, draft, coordinated update) is the structural point, and the plan request is read-only so a structural objection costs one cheap round trip.
-
-The supplied notes describe the reader's own Chapters 6 and 7 experience, deliberately: the reader is the authority on the source, so checking factual accuracy is genuinely possible rather than a performance. The two gap lines carry the main lesson and must survive editing. Section 13.3's article model completes the content-modelling thread Chapter 9 left open, and attribution sits in the page body because the starter renders no attribution field, reusing Chapter 9's lesson about front matter not being self-displaying.
-
-Section 13.7's unsupported sentence is the designed failure, mirroring Chapter 8's link mistake: both pass `hugo --minify --panicOnWarning`. The recovery differs on purpose: the new bundle is untracked, so `git restore` does not apply, which gives a concrete reason for committing a contribution once accepted. Check in the trial that beginners do not read this as a defect in Git.
-
-This is the longest chapter at roughly 4,830 words, though its reader-facing prose is mid-range; the difference is the three prompts, the supplied notes, and the comparison article, which are reference material and were not cut to reach a total. If the trial shows it running long, move the prompts into a companion command card as Chapter 6 does for Git.
-
-Nothing here has been validated. See the validation record for what a replay must confirm.
