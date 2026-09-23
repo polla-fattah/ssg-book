@@ -7,9 +7,6 @@ book_number: 18
 *Static Site Generators in the Age of AI*  
 *Building and Maintaining Content with AI Agents*
 
-**Draft 0.1, 17 September 2026**  
-*The added version check was verified against a fixture. No Hugo build, GitHub Actions run, deployment, revert against a live site, or beginner trial yet.*
-
 Your notebook works. It is published, checked on every proposal, searchable, bilingual in part, and able to receive a message. Nothing about it is finished, because a website that nobody maintains does not stay still; it goes quietly out of date while appearing to work perfectly.
 
 In this chapter you will make a maintenance pass over the site you actually have. You will find a page that now says something untrue, update what you depend on, archive work that has been superseded, and publish a mistake on purpose so that you can practise recovering from it after it has gone live. Then you will settle the questions that outlast any single change: credentials, licensing, privacy, cost, and who owns what.
@@ -25,7 +22,7 @@ By the end, you should be able to:
 - Retire a page without breaking an address you have published.
 - Undo a change that is already live, without rewriting published history.
 
-Start from the completed Chapter 17 checkpoint with a clean working tree on `main`, pushed and deployed. Work on a branch and propose changes through a pull request, except where Section 18.4 deliberately does otherwise.
+Start from the completed Chapter 17 checkpoint with a clean working tree on `main`, pushed and deployed. (If you are following along in the companion repository `ssg-playground`, make sure you start from branch `chapter-17` or check out the completed chapter on branch `chapter-18`.) Work on a branch and propose changes through a pull request, except where Section 18.4 deliberately does otherwise.
 
 Nothing new is installed. This chapter is about the site, the repository, and the arrangements around them.
 
@@ -371,17 +368,3 @@ Chapter 19 hands the whole method to you: a project of your own, planned, built,
 | A token appeared in a commit. | Revoke it at the service now. Removing it in a later commit does not remove it from history. |
 
 A maintenance pass finds what you thought to ask about. Keep `MAINTENANCE.md` as a list of questions rather than a list of answers, and add a question each time something surprises you.
-
----
-
-## Editorial note for the author (remove before publication)
-
-The findings are real rather than invented. The reading-list page genuinely became untrue over Chapters 9 to 16: it claims the reading work has not begun while Chapter 12's resource directory does that job. Verify on replay that the wording still reads as stale; if earlier chapters are revised, re-derive this finding rather than assuming it. The leftover Chapter 1 to 5 backup folders are the second real finding and should stay, because readers will have them.
-
-Section 18.4 is the designed failure and the most carefully constructed thing here. Setting `draft: true` while archiving is the mistake a reasonable person makes, it passes all five CI checks, and its damage is invisible from inside the site: Chapter 10 replaced the hand-written project list with a generated one, so the drafted page removes itself from the only place that linked to it. A published address 404s and nothing on the site reveals it. This is also the chapter that finally needs `git revert`, cashing Chapter 6's deferral of history editing. Publishing a mistake on purpose is deliberate: describing the recovery without performing it would leave readers attempting `git revert` for the first time under real pressure.
-
-Section 18.3 declines to fake a migration. No address must change, so the alias is verified as a mechanism and then removed, with the honest framing that Chapter 3's naming is why no redirect is needed. Do not replace this with an invented rename.
-
-At about 3,830 words of reader-facing prose this is the longest chapter, against a previous maximum of 3,690: a measured overrun, since this plan row lists eleven topics where most list three or four. Split Section 18.6 if the trial shows it running long: credentials, licensing, privacy, cost, and ownership are a coherent chapter of their own.
-
-The version-match step was executed against a fixture, and working through the sequence corrected two drafting faults. Nothing else is validated. See the validation record.

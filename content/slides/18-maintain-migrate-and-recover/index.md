@@ -33,7 +33,7 @@ A site nobody maintains does not stay still: it goes quietly out of date while *
 - **Retire** a page without breaking a published address
 - **Undo** a live change without rewriting published history
 
-Start from Chapter 17: clean, pushed, and deployed.
+Start from Chapter 17 (branch `chapter-17`): clean, pushed, and deployed.
 
 ---
 
