@@ -29,11 +29,10 @@ hero:
   # The author's illustration with its black background removed; the full-size
   # copy is "Chapters and plan/cover/hero.png" in the book workspace.
   image:
-    src: images/hero-book.webp
+    src: images/front-cover.webp
     alt: >
-      Source files and code snippets flow along connected lines into a published
-      website, with a page layout, a book chapter, and a branching Git history
-      beside it.
+      Book cover: Static Site Generators in the Age of AI - Building and Maintaining
+      Content with AI Agents by Polla Fattah and Collection of LLMs.
   # Text and illustration share the width equally, and the image may grow past
   # the theme's 480px default. It is left out on phones, where it would push
   # the text down.
