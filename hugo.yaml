@@ -9,6 +9,14 @@
 title: SSG Book
 locale: en
 
+ignoreLogs:
+  - warning-goldmark-raw-html
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 # Top navigation. Each pageRef must point at an existing page, or the strict
 # build fails; Slides and Playground have placeholder pages until they exist.
 # `icon: false` shows an entry as text only; without it the theme picks an icon.

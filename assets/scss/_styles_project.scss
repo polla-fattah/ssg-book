@@ -4,7 +4,8 @@ https://oink.pgsty.com/docs/customize/brand/#scss
 */
 
 /* Open Source GitHub Badge in Hero */
-.td-hero-os-badge {
+.td-hero-os-badge,
+.td-landing-hero__eyebrow a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -12,13 +13,22 @@ https://oink.pgsty.com/docs/customize/brand/#scss
   border-radius: 9999px;
   background: rgba(5, 150, 105, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.35);
-  color: #047857;
+  color: #047857 !important;
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none !important;
   transition: all 180ms ease;
+
+  &::before {
+    content: "\f09b";
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #181717;
+    transition: transform 180ms ease;
+  }
 
   i {
     font-size: 0.95rem;
@@ -29,21 +39,24 @@ https://oink.pgsty.com/docs/customize/brand/#scss
   &:hover {
     background: rgba(5, 150, 105, 0.18);
     border-color: #059669;
-    color: #065f46;
+    color: #065f46 !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 14px rgba(5, 150, 105, 0.2);
 
+    &::before,
     i {
       transform: scale(1.15);
     }
   }
 }
 
-[data-bs-theme="dark"] .td-hero-os-badge {
+[data-bs-theme="dark"] .td-hero-os-badge,
+[data-bs-theme="dark"] .td-landing-hero__eyebrow a {
   background: rgba(16, 185, 129, 0.12);
   border-color: rgba(52, 211, 153, 0.4);
-  color: #34d399;
+  color: #34d399 !important;
 
+  &::before,
   i {
     color: #ffffff;
   }
@@ -51,7 +64,7 @@ https://oink.pgsty.com/docs/customize/brand/#scss
   &:hover {
     background: rgba(16, 185, 129, 0.22);
     border-color: #34d399;
-    color: #6ee7b7;
+    color: #6ee7b7 !important;
     box-shadow: 0 0 16px rgba(52, 211, 153, 0.3);
   }
 }
