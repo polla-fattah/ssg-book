@@ -57,7 +57,8 @@ params:
   # is decoration a date line does not need.
   time_format_blog: 2006-01-02
   time_format_default: 2006-01-02
-  # Branch used by the edit / history / new-page links derived from github_repo.
+  # GitHub repository and branch used for edit, history, and navbar links.
+  github_repo: https://github.com/polla-fattah/ssg-book
   github_branch: main
   page_width: normal # normal | wide | full
   # Inner reading measure for Book pages: slim | normal | wide. Unlike

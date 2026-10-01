@@ -1,5 +1,11 @@
 # Static Site Generators in the Age of AI
 
+<p align="left">
+  <a href="https://github.com/polla-fattah/ssg-book"><img src="https://img.shields.io/badge/Open_Source-Project-059669?style=for-the-badge&logo=github&logoColor=white" alt="Open Source Project on GitHub" /></a>
+  <a href="https://github.com/polla-fattah/ssg-book"><img src="https://img.shields.io/badge/GitHub-ssg--book-181717?style=for-the-badge&logo=github" alt="GitHub Repository" /></a>
+  <a href="https://github.com/polla-fattah/ssg-book"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" alt="Open Source" /></a>
+</p>
+
 This repository contains the companion website for *Static Site Generators in
 the Age of AI: Building and Maintaining Content with AI Agents*.
 

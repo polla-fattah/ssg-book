@@ -21,6 +21,7 @@ sections:
   - cta
 
 hero:
+  eyebrow: '<a href="https://github.com/polla-fattah/ssg-book" target="_blank" rel="noopener noreferrer" class="td-hero-os-badge"><i class="fa-brands fa-github"></i> <span>Open Source Project</span></a>'
   logo: icons/logo.svg
   title: Static Site Generators in the Age of AI
   # Caps the title's size; below about 950px wide it scales with the window.
@@ -54,6 +55,11 @@ hero:
       url: paths/
       icon: fa-solid fa-route
       style: ghost
+    - label: "GitHub"
+      url: https://github.com/polla-fattah/ssg-book
+      icon: fa-brands fa-github
+      style: ghost
+      external: true
 
 metrics:
   eyebrow: 

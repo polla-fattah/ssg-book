@@ -1,3 +1,34 @@
 {{ define "main" }}
-{{ .Render "_td-content" }}
+{{- $urls := partial "actions/page-urls.html" . -}}
+<div class="td-content td-book-chapter">
+  <div class="td-page-heading td-chapter-page-heading">
+    <div class="td-chapter-header-flex">
+      <h1 class="td-chapter-title">
+        {{- with .Params.book_number }}<span class="td-book-number">{{ . }}</span> {{ end -}}
+        {{- .Title -}}
+      </h1>
+      {{- with $urls.edit }}
+      <a href="{{ . }}" class="td-chapter-edit-btn" target="_blank" rel="noopener noreferrer" title="Edit this chapter on GitHub — Amendments are welcomed">
+        <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+        <span>Amendments are welcomed</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+  {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+  <header class="td-article-meta">
+    {{ partial "taxonomy-terms-article-wrapper.html" . -}}
+  </header>
+  {{ .Render "_td-content-after-header" -}}
+  {{ partial "content/render.html" . }}
+  {{- with $urls.edit }}
+  <div class="td-chapter-footer-edit d-print-none">
+    <a href="{{ . }}" class="td-chapter-edit-btn td-chapter-edit-btn--bottom" target="_blank" rel="noopener noreferrer" title="Edit this chapter on GitHub — Amendments are welcomed">
+      <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+      <span>Amendments are welcomed &mdash; Edit this chapter on GitHub</span>
+    </a>
+  </div>
+  {{- end }}
+  {{ partial "page-end.html" . }}
+</div>
 {{ end }}

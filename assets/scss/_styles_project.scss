@@ -2,3 +2,169 @@
 Projects can override this file. For details, see:
 https://oink.pgsty.com/docs/customize/brand/#scss
 */
+
+/* Open Source GitHub Badge in Hero */
+.td-hero-os-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #047857;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none !important;
+  transition: all 180ms ease;
+
+  i {
+    font-size: 0.95rem;
+    color: #181717;
+    transition: transform 180ms ease;
+  }
+
+  &:hover {
+    background: rgba(5, 150, 105, 0.18);
+    border-color: #059669;
+    color: #065f46;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.2);
+
+    i {
+      transform: scale(1.15);
+    }
+  }
+}
+
+[data-bs-theme="dark"] .td-hero-os-badge {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
+
+  i {
+    color: #ffffff;
+  }
+
+  &:hover {
+    background: rgba(16, 185, 129, 0.22);
+    border-color: #34d399;
+    color: #6ee7b7;
+    box-shadow: 0 0 16px rgba(52, 211, 153, 0.3);
+  }
+}
+
+/* Chapter Heading Flex Row & Pencil Button (Exclusive to Chapters) */
+.td-chapter-page-heading {
+  margin-bottom: 1.5rem;
+}
+
+.td-chapter-header-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.td-chapter-title {
+  flex: 1 1 280px;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.td-chapter-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  border-radius: 8px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  line-height: 1.3;
+  white-space: nowrap;
+  background: rgba(5, 150, 105, 0.08);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  color: #047857 !important;
+  transition: all 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  align-self: flex-start;
+  margin-top: 4px;
+
+  i {
+    font-size: 0.82rem;
+    color: #059669;
+    transition: transform 160ms ease;
+  }
+
+  &:hover {
+    background: #059669;
+    border-color: #059669;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+
+    i {
+      color: #ffffff;
+      transform: rotate(-15deg);
+    }
+  }
+}
+
+[data-bs-theme="dark"] .td-chapter-edit-btn {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(52, 211, 153, 0.35);
+  color: #34d399 !important;
+
+  i {
+    color: #34d399;
+  }
+
+  &:hover {
+    background: #059669;
+    border-color: #059669;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.45);
+
+    i {
+      color: #ffffff;
+    }
+  }
+}
+
+/* Chapter Bottom Edit Callout Banner */
+.td-chapter-footer-edit {
+  margin: 2.5rem 0 1.5rem 0;
+  padding: 18px 24px;
+  background: rgba(5, 150, 105, 0.04);
+  border: 1px dashed rgba(5, 150, 105, 0.35);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: border-color 160ms ease;
+
+  &:hover {
+    border-color: rgba(5, 150, 105, 0.65);
+  }
+}
+
+[data-bs-theme="dark"] .td-chapter-footer-edit {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(52, 211, 153, 0.3);
+
+  &:hover {
+    border-color: rgba(52, 211, 153, 0.6);
+  }
+}
+
+.td-chapter-edit-btn--bottom {
+  padding: 9px 18px;
+  font-size: 0.88rem;
+  margin-top: 0;
+  align-self: center;
+}
